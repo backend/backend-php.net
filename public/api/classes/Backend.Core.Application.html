@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Core\Application</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: The constructor for the object."><span class="description">The constructor for the object.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_error" title="error :: Error handling function called when ever an error occurs."><span class="description">Error handling function called when ever an error occurs.</span><pre>error()</pre></a></li>
+<li class="method public "><a href="#method_exception" title="exception :: Exception handling function called when ever an exception isn't handled."><span class="description">Exception handling function called when ever an exception isn't handled.</span><pre>exception()</pre></a></li>
+<li class="method public "><a href="#method_getConfig" title="getConfig :: Get the application's configuration."><span class="description">Get the application's configuration.</span><pre>getConfig()</pre></a></li>
+<li class="method public "><a href="#method_getContainer" title="getContainer :: Get the Application's DI Container"><span class="description">Get the Application's DI Container</span><pre>getContainer()</pre></a></li>
+<li class="method public "><a href="#method_getRequest" title="getRequest :: Get the request that's currently being executed."><span class="description">Get the request that's currently being executed.</span><pre>getRequest()</pre></a></li>
+<li class="method public "><a href="#method_getRouter" title="getRouter :: Get the Router for the Application."><span class="description">Get the Router for the Application.</span><pre>getRouter()</pre></a></li>
+<li class="method public "><a href="#method_init" title="init :: Initialize the Application."><span class="description">Initialize the Application.</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_main" title="main :: Main function for the application."><span class="description">Main function for the application.</span><pre>main()</pre></a></li>
+<li class="method public "><a href="#method_raiseEvent" title="raiseEvent :: Raise an event."><span class="description">Raise an event.</span><pre>raiseEvent()</pre></a></li>
+<li class="method public "><a href="#method_setConfig" title="setConfig :: Set the request that's will be executed."><span class="description">Set the request that's will be executed.</span><pre>setConfig()</pre></a></li>
+<li class="method public "><a href="#method_setContainer" title="setContainer :: Set the Application's DI Container."><span class="description">Set the Application's DI Container.</span><pre>setContainer()</pre></a></li>
+<li class="method public "><a href="#method_setRequest" title="setRequest :: Set the request that's will be executed."><span class="description">Set the request that's will be executed.</span><pre>setRequest()</pre></a></li>
+<li class="method public "><a href="#method_setRouter" title="setRouter :: Set the Router for the Application."><span class="description">Set the Router for the Application.</span><pre>setRouter()</pre></a></li>
+<li class="method public "><a href="#method_shutdown" title="shutdown :: Shutdown function called when ever the script ends"><span class="description">Shutdown function called when ever the script ends</span><pre>shutdown()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_config" title="$config :: The Application Configuration."><span class="description"></span><pre>$config</pre></a></li>
+<li class="property protected "><a href="#property_container" title="$container :: The Dependency Injection Container for the Application."><span class="description"></span><pre>$container</pre></a></li>
+<li class="property protected "><a href="#property_request" title="$request :: The request currently being executed."><span class="description"></span><pre>$request</pre></a></li>
+<li class="property protected "><a href="#property_router" title="$router :: Router to map callbacks to requests, and vice versa."><span class="description"></span><pre>$router</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Core\Application"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Core.Application.html">Application</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">The main application class.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Core.html">Core</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@backend-php.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>The constructor for the object.</h2>
+<pre>__construct(\Backend\Interfaces\ConfigInterface $config, \Backend\Interfaces\DependencyInjectionContainerInterface $container) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>\Backend\Core\Backend\Interfaces\ConfigInterface</code><p>The Configuration for the
+Application.</p></div>
+<div class="subelement argument">
+<h4>$container</h4>
+<code>\Backend\Core\Backend\Interfaces\DependencyInjectionContainerInterface</code><p>The
+DI Container for the Application.
+Application.</p></div>
+</div></div>
+</div>
+<a id="method_error"></a><div class="element clickable method public method_error" data-toggle="collapse" data-target=".method_error .collapse">
+<h2>Error handling function called when ever an error occurs.</h2>
+<pre>error(int $errno, string $errstr, string $errfile, int $errline, array $errcontext, bool $return) : <a href="http://php.net/manual/en/class.exception.php">\Exception</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Called by set_error_handler. Some types of errors will be converted into
+excceptions.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errno</h4>
+<code>int</code><p>The error number.</p></div>
+<div class="subelement argument">
+<h4>$errstr</h4>
+<code>string</code><p>The error string.</p></div>
+<div class="subelement argument">
+<h4>$errfile</h4>
+<code>string</code><p>The file the error occured in.</p></div>
+<div class="subelement argument">
+<h4>$errline</h4>
+<code>int</code><p>The line number the error occured on.</p></div>
+<div class="subelement argument">
+<h4>$errcontext</h4>
+<code>array</code><p>The context the error occured in.</p></div>
+<div class="subelement argument">
+<h4>$return</h4>
+<code>bool</code><p>Return the exception instead of running it.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></div>
+</div></div>
+</div>
+<a id="method_exception"></a><div class="element clickable method public method_exception" data-toggle="collapse" data-target=".method_exception .collapse">
+<h2>Exception handling function called when ever an exception isn't handled.</h2>
+<pre>exception(\Exception $exception) : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Called by set_exception_handler.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exception</h4>
+<code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code><p>The thrown exception.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code></div>
+</div></div>
+</div>
+<a id="method_getConfig"></a><div class="element clickable method public method_getConfig" data-toggle="collapse" data-target=".method_getConfig .collapse">
+<h2>Get the application's configuration.</h2>
+<pre>getConfig() : <a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></code></div>
+</div></div>
+</div>
+<a id="method_getContainer"></a><div class="element clickable method public method_getContainer" data-toggle="collapse" data-target=".method_getContainer .collapse">
+<h2>Get the Application's DI Container</h2>
+<pre>getContainer() : <a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></code>The
+Application's DI Container</div>
+</div></div>
+</div>
+<a id="method_getRequest"></a><div class="element clickable method public method_getRequest" data-toggle="collapse" data-target=".method_getRequest .collapse">
+<h2>Get the request that's currently being executed.</h2>
+<pre>getRequest() : <a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></code></div>
+</div></div>
+</div>
+<a id="method_getRouter"></a><div class="element clickable method public method_getRouter" data-toggle="collapse" data-target=".method_getRouter .collapse">
+<h2>Get the Router for the Application.</h2>
+<pre>getRouter() : \Backend\Core\Backend\Interfaces\RouterInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Backend\Core\Backend\Interfaces\RouterInterface</code></div>
+</div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>Initialize the Application.</h2>
+<pre>init() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Returns true if the initialization ran. False otherwise.</div>
+</div></div>
+</div>
+<a id="method_main"></a><div class="element clickable method public method_main" data-toggle="collapse" data-target=".method_main .collapse">
+<h2>Main function for the application.</h2>
+<pre>main(\Backend\Interfaces\RequestInterface $request) : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Inspect the request and subsequent results, chain if necessary.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$request</h4>
+<code>\Backend\Core\Backend\Interfaces\RequestInterface</code><p>The request the
+application should handle</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Core.Exception.html">\Backend\Core\Exception</a></code></th>
+<td>When there's no route or formatter for the
+request.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code></div>
+</div></div>
+</div>
+<a id="method_raiseEvent"></a><div class="element clickable method public method_raiseEvent" data-toggle="collapse" data-target=".method_raiseEvent .collapse">
+<h2>Raise an event.</h2>
+<pre>raiseEvent($name, $event) : <a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$event</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></code>The current object</div>
+</div></div>
+</div>
+<a id="method_setConfig"></a><div class="element clickable method public method_setConfig" data-toggle="collapse" data-target=".method_setConfig .collapse">
+<h2>Set the request that's will be executed.</h2>
+<pre>setConfig($config) : <a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$config</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></code></div>
+</div></div>
+</div>
+<a id="method_setContainer"></a><div class="element clickable method public method_setContainer" data-toggle="collapse" data-target=".method_setContainer .collapse">
+<h2>Set the Application's DI Container.</h2>
+<pre>setContainer(\Backend\Interfaces\DependencyInjectionContainerInterface $container) : <a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$container</h4>
+<code><a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></code><p>The DI Container for the Application.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></code>The current object.</div>
+</div></div>
+</div>
+<a id="method_setRequest"></a><div class="element clickable method public method_setRequest" data-toggle="collapse" data-target=".method_setRequest .collapse">
+<h2>Set the request that's will be executed.</h2>
+<pre>setRequest(<a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a> $request) : <a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$request</h4>
+<code><a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></code><p>The request to set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Core.Application.html">\Backend\Core\Application</a></code></div>
+</div></div>
+</div>
+<a id="method_setRouter"></a><div class="element clickable method public method_setRouter" data-toggle="collapse" data-target=".method_setRouter .collapse">
+<h2>Set the Router for the Application.</h2>
+<pre>setRouter(\Backend\Interfaces\RouterInterface $router) : \Backend\Core\Backend\Core\Application</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$router</h4>
+<code>\Backend\Core\Backend\Interfaces\RouterInterface</code><p>The router for the Applciation.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Backend\Core\Backend\Core\Application</code></div>
+</div></div>
+</div>
+<a id="method_shutdown"></a><div class="element clickable method public method_shutdown" data-toggle="collapse" data-target=".method_shutdown .collapse">
+<h2>Shutdown function called when ever the script ends</h2>
+<pre>shutdown() : null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>null</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse">
+<h2></h2>
+<pre>$config : \Backend\Core\Backend\Interfaces\ConfigInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_container"> </a><div class="element clickable property protected property_container" data-toggle="collapse" data-target=".property_container .collapse">
+<h2></h2>
+<pre>$container : \Backend\Core\Backend\Interfaces\DependencyInjectionContainerInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_request"> </a><div class="element clickable property protected property_request" data-toggle="collapse" data-target=".property_request .collapse">
+<h2></h2>
+<pre>$request : <a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_router"> </a><div class="element clickable property protected property_router" data-toggle="collapse" data-target=".property_router .collapse">
+<h2></h2>
+<pre>$router : \Backend\Core\Backend\Interfaces\RouterInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

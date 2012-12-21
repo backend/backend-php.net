@@ -1,0 +1,760 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Base\Controllers\ValuesController</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: The constructor for the object"><span class="description">The constructor for the object</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___get" title="__get :: Magic method to get properties."><span class="description">Magic method to get properties.</span><pre>__get()</pre></a></li>
+<li class="method public inherited"><a href="#method_createAction" title="createAction :: CRUD Create functionality for controllers."><span class="description">CRUD Create functionality for controllers.</span><pre>createAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_createHtml" title="createHtml :: The HTML method for the create Action."><span class="description">The HTML method for the create Action.</span><pre>createHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_deleteAction" title="deleteAction :: CRUD Delete functionality for controllers."><span class="description">CRUD Delete functionality for controllers.</span><pre>deleteAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_deleteHtml" title="deleteHtml :: The HTML method for the delete Action"><span class="description">The HTML method for the delete Action</span><pre>deleteHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_flash" title="flash :: Safely add a flash variable."><span class="description">Safely add a flash variable.</span><pre>flash()</pre></a></li>
+<li class="method public inherited"><a href="#method_formAction" title="formAction :: Get a Form for the Model."><span class="description">Get a Form for the Model.</span><pre>formAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_formHtml" title="formHtml :: The HTML method for the form Action."><span class="description">The HTML method for the form Action.</span><pre>formHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_getContainer" title="getContainer :: Get the Controller's DI Container"><span class="description">Get the Controller's DI Container</span><pre>getContainer()</pre></a></li>
+<li class="method public inherited"><a href="#method_getModelName" title="getModelName :: Return the Model name derived from the given Controller"><span class="description">Return the Model name derived from the given Controller</span><pre>getModelName()</pre></a></li>
+<li class="method public inherited"><a href="#method_getRequest" title="getRequest :: Get the Controller's Request"><span class="description">Get the Controller's Request</span><pre>getRequest()</pre></a></li>
+<li class="method public "><a href="#method_listAction" title="listAction :: An Extension of the CRUD Read function to list a resource"><span class="description">An Extension of the CRUD Read function to list a resource</span><pre>listAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_listHtml" title="listHtml :: The HTML method for the list Action."><span class="description">The HTML method for the list Action.</span><pre>listHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_readAction" title="readAction :: CRUD Read functionality for controllers."><span class="description">CRUD Read functionality for controllers.</span><pre>readAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_readHtml" title="readHtml :: The HTML method for the read Action."><span class="description">The HTML method for the read Action.</span><pre>readHtml()</pre></a></li>
+<li class="method public inherited"><a href="#method_redirect" title="redirect :: Create a redirection Response"><span class="description">Create a redirection Response</span><pre>redirect()</pre></a></li>
+<li class="method public inherited"><a href="#method_render" title="render :: Create a Renderable object."><span class="description">Create a Renderable object.</span><pre>render()</pre></a></li>
+<li class="method public inherited"><a href="#method_setContainer" title="setContainer :: Set the Controller's DI Container."><span class="description">Set the Controller's DI Container.</span><pre>setContainer()</pre></a></li>
+<li class="method public inherited"><a href="#method_setModelName" title="setModelName :: Set the model name for this Controller Class."><span class="description">Set the model name for this Controller Class.</span><pre>setModelName()</pre></a></li>
+<li class="method public inherited"><a href="#method_setRequest" title="setRequest :: Set the Request for the Controller."><span class="description">Set the Request for the Controller.</span><pre>setRequest()</pre></a></li>
+<li class="method public inherited"><a href="#method_updateAction" title="updateAction :: CRUD Update functionality for controllers."><span class="description">CRUD Update functionality for controllers.</span><pre>updateAction()</pre></a></li>
+<li class="method public inherited"><a href="#method_updateHtml" title="updateHtml :: The HTML method for the update Action."><span class="description">The HTML method for the update Action.</span><pre>updateHtml()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected inherited"><a href="#method_getBinding" title="getBinding :: Get the Model Binding, using the name of the controller to determine the binding."><span class="description">Get the Model Binding, using the name of the controller to determine the binding.</span><pre>getBinding()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_container" title="$container :: The Dependency Injection Container to be used when getting services."><span class="description"></span><pre>$container</pre></a></li>
+<li class="property protected inherited"><a href="#property_request" title="$request :: This contains the Request that's being actioned."><span class="description"></span><pre>$request</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private inherited"><a href="#property_modelName" title="$modelName :: The class name of the Model this Controller is connected with."><span class="description"></span><pre>$modelName</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Base\Controllers\ValuesController"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Controllers.html">Controllers</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Base.Controllers.ValuesController.html">ValuesController</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A simple ModelController showing how to use Bindings and mapping REST actions
+to CRUD methods.</p>
+<div class="details">
+<div class="long_description"><p>Executing GET requests on the following special resources modifies the default REST behaviour</p></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Base.Controllers.html">Base</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Controllers</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@backend-php.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>The constructor for the object</h2>
+<pre>__construct(\Backend\Interfaces\DependencyInjectionContainerInterface $container, \Backend\Interfaces\RequestInterface $request) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::__construct()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::__construct()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::__construct()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$container</h4></div>
+<div class="subelement argument"><h4>$request</h4></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic method to get properties.</h2>
+<pre>__get(string $property) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Will return the named service if it exists.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::__get()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::__get()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property or service to get.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.errorexception.php">\ErrorException</a></code></th>
+<td>If the service doesn't exist.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_createAction"></a><div class="element clickable method public method_createAction" data-toggle="collapse" data-target=".method_createAction .collapse">
+<h2>CRUD Create functionality for controllers.</h2>
+<pre>createAction() : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::createAction()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>A Created / 201 Response with a redirect
+to the created resource.</div>
+</div></div>
+</div>
+<a id="method_createHtml"></a><div class="element clickable method public method_createHtml" data-toggle="collapse" data-target=".method_createHtml .collapse">
+<h2>The HTML method for the create Action.</h2>
+<pre>createHtml(mixed $result) : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a Model is returned by createAction, and it has a getId method, a redirect
+to the Model's URL will be issued. Otherwise a redirect to the referer is issued.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::createHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>A Redirect to the created resource</div>
+</div></div>
+</div>
+<a id="method_deleteAction"></a><div class="element clickable method public method_deleteAction" data-toggle="collapse" data-target=".method_deleteAction .collapse">
+<h2>CRUD Delete functionality for controllers.</h2>
+<pre>deleteAction(mixed $id) : <a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::deleteAction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>mixed</code><p>The identifier. @todo Set to 0 to reference the whole collection</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></code>A No Content / 204 Response if successful.</div>
+</div></div>
+</div>
+<a id="method_deleteHtml"></a><div class="element clickable method public method_deleteHtml" data-toggle="collapse" data-target=".method_deleteHtml .collapse">
+<h2>The HTML method for the delete Action</h2>
+<pre>deleteHtml(mixed $result) : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::deleteHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>A Redirect to the resource collection</div>
+</div></div>
+</div>
+<a id="method_flash"></a><div class="element clickable method public method_flash" data-toggle="collapse" data-target=".method_flash .collapse">
+<h2>Safely add a flash variable.</h2>
+<pre>flash(string $name, mixed $value) : <a href="../classes/Backend.Base.Controller.html">\Backend\Base\Controller</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the flash service was defined, log the call and ignore.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::flash()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::flash()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the flash value.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The flash value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Base.Controller.html">\Backend\Base\Controller</a></code></div>
+</div></div>
+</div>
+<a id="method_formAction"></a><div class="element clickable method public method_formAction" data-toggle="collapse" data-target=".method_formAction .collapse">
+<h2>Get a Form for the Model.</h2>
+<pre>formAction(mixed $id) : <a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a> | <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::formAction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>mixed</code><p>The identifier</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>
+</div>
+</div></div>
+</div>
+<a id="method_formHtml"></a><div class="element clickable method public method_formHtml" data-toggle="collapse" data-target=".method_formHtml .collapse">
+<h2>The HTML method for the form Action.</h2>
+<pre>formHtml(mixed $result) : <a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::formHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></code></div>
+</div></div>
+</div>
+<a id="method_getContainer"></a><div class="element clickable method public method_getContainer" data-toggle="collapse" data-target=".method_getContainer .collapse">
+<h2>Get the Controller's DI Container</h2>
+<pre>getContainer() : <a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::getContainer()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::getContainer()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::getContainer()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></code>The
+Controller's DI Container</div>
+</div></div>
+</div>
+<a id="method_getModelName"></a><div class="element clickable method public method_getModelName" data-toggle="collapse" data-target=".method_getModelName .collapse">
+<h2>Return the Model name derived from the given Controller</h2>
+<pre>getModelName(mixed $controllerName) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::getModelName()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$controllerName</h4>
+<code>mixed</code><p>The name of the controller, or the controller itself</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the corresponding Model.</div>
+</div></div>
+</div>
+<a id="method_getRequest"></a><div class="element clickable method public method_getRequest" data-toggle="collapse" data-target=".method_getRequest .collapse">
+<h2>Get the Controller's Request</h2>
+<pre>getRequest() : <a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::getRequest()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::getRequest()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::getRequest()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></code>The Controller's Request</div>
+</div></div>
+</div>
+<a id="method_listAction"></a><div class="element clickable method public method_listAction" data-toggle="collapse" data-target=".method_listAction .collapse">
+<h2>An Extension of the CRUD Read function to list a resource</h2>
+<pre>listAction() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of Models</div>
+</div></div>
+</div>
+<a id="method_listHtml"></a><div class="element clickable method public method_listHtml" data-toggle="collapse" data-target=".method_listHtml .collapse">
+<h2>The HTML method for the list Action.</h2>
+<pre>listHtml(array $result) : <a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::listHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>array</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></code></div>
+</div></div>
+</div>
+<a id="method_readAction"></a><div class="element clickable method public method_readAction" data-toggle="collapse" data-target=".method_readAction .collapse">
+<h2>CRUD Read functionality for controllers.</h2>
+<pre>readAction(mixed $id) : <a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a> | <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::readAction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>mixed</code><p>The identifier</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>
+</div>
+</div></div>
+</div>
+<a id="method_readHtml"></a><div class="element clickable method public method_readHtml" data-toggle="collapse" data-target=".method_readHtml .collapse">
+<h2>The HTML method for the read Action.</h2>
+<pre>readHtml(mixed $result) : <a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::readHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></code></div>
+</div></div>
+</div>
+<a id="method_redirect"></a><div class="element clickable method public method_redirect" data-toggle="collapse" data-target=".method_redirect .collapse">
+<h2>Create a redirection Response</h2>
+<pre>redirect(string $location, int $responseCode) : <a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::redirect()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::redirect()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::redirect()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$location</h4>
+<code>string</code><p>The location to redirect to</p></div>
+<div class="subelement argument">
+<h4>$responseCode</h4>
+<code>int</code><p>The HTTP status code to use</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></code>The Response object</div>
+</div></div>
+</div>
+<a id="method_render"></a><div class="element clickable method public method_render" data-toggle="collapse" data-target=".method_render .collapse">
+<h2>Create a Renderable object.</h2>
+<pre>render(string $template, array $values) : <a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::render()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::render()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The template to render.</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>The values to pass to the template.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Base.Utilities.Renderable.html">\Backend\Base\Utilities\Renderable</a></code>The Renderable object</div>
+</div></div>
+</div>
+<a id="method_setContainer"></a><div class="element clickable method public method_setContainer" data-toggle="collapse" data-target=".method_setContainer .collapse">
+<h2>Set the Controller's DI Container.</h2>
+<pre>setContainer(\Backend\Interfaces\DependencyInjectionContainerInterface $container) : <a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::setContainer()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::setContainer()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::setContainer()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$container</h4>
+<code><a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">\Backend\Interfaces\DependencyInjectionContainerInterface</a></code><p>The DI Container for the Controller.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></code>The current object.</div>
+</div></div>
+</div>
+<a id="method_setModelName"></a><div class="element clickable method public method_setModelName" data-toggle="collapse" data-target=".method_setModelName .collapse">
+<h2>Set the model name for this Controller Class.</h2>
+<pre>setModelName(string $modelName) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::setModelName()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$modelName</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setRequest"></a><div class="element clickable method public method_setRequest" data-toggle="collapse" data-target=".method_setRequest .collapse">
+<h2>Set the Request for the Controller.</h2>
+<pre>setRequest(\Backend\Interfaces\RequestInterface $request) : <a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::setRequest()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::setRequest()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::setRequest()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$request</h4>
+<code><a href="../classes/Backend.Interfaces.RequestInterface.html">\Backend\Interfaces\RequestInterface</a></code><p>The request for the
+Controller.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ControllerInterface.html">\Backend\Interfaces\ControllerInterface</a></code>The current object.</div>
+</div></div>
+</div>
+<a id="method_updateAction"></a><div class="element clickable method public method_updateAction" data-toggle="collapse" data-target=".method_updateAction .collapse">
+<h2>CRUD Update functionality for controllers.</h2>
+<pre>updateAction(mixed $id) : <a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::updateAction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>mixed</code><p>The identifier. @todo Set to 0 to reference the whole collection</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ResponseInterface.html">\Backend\Interfaces\ResponseInterface</a></code>A OK / 200 Response if successful.</div>
+</div></div>
+</div>
+<a id="method_updateHtml"></a><div class="element clickable method public method_updateHtml" data-toggle="collapse" data-target=".method_updateHtml .collapse">
+<h2>The HTML method for the update Action.</h2>
+<pre>updateHtml(mixed $result) : <a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>It redirects to the GET of the URL, as this should give you the updated
+response in REST architecture.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::updateHtml()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result from the Action method.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Core.Response.html">\Backend\Core\Response</a></code>A Redirect to the updated resource</div>
+</div></div>
+</div>
+<a id="method_getBinding"></a><div class="element clickable method protected method_getBinding" data-toggle="collapse" data-target=".method_getBinding .collapse">
+<h2>Get the Model Binding, using the name of the controller to determine the binding.</h2>
+<pre>getBinding(string $modelName) : <a href="../classes/Backend.Interfaces.BindingInterface.html">\Backend\Interfaces\BindingInterface</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>I would love to make this static, but we need the container to get the factory,
+to get the binding.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::getBinding()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$modelName</h4>
+<code>string</code><p>The name of the model to get the binding for.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Interfaces.BindingInterface.html">\Backend\Interfaces\BindingInterface</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_container"> </a><div class="element clickable property protected property_container" data-toggle="collapse" data-target=".property_container .collapse">
+<h2></h2>
+<pre>$container : \Backend\nterfaces\DependencyInjectionContainerInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::$$container</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::$$container</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::$$container</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_request"> </a><div class="element clickable property protected property_request" data-toggle="collapse" data-target=".property_request .collapse">
+<h2></h2>
+<pre>$request : \Backend\nterfaces\RequestInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Core\Controller::$$request</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controller::$$request</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::$$request</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_modelName"> </a><div class="element clickable property private property_modelName" data-toggle="collapse" data-target=".property_modelName .collapse">
+<h2></h2>
+<pre>$modelName : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Backend\Base\Controllers\ModelController::$$modelName</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

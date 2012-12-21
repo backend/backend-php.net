@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Base\Tests\Controllers\ModelControllerTest</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_dataNoResponseHtml" title="dataNoResponseHtml :: Data provider for Test that check Html Methods for invalid responses"><span class="description">Data provider for Test that check Html Methods for invalid responses</span><pre>dataNoResponseHtml()</pre></a></li>
+<li class="method public "><a href="#method_testCreate" title="testCreate :: Test the create action."><span class="description">Test the create action.</span><pre>testCreate()</pre></a></li>
+<li class="method public "><a href="#method_testDelete" title="testDelete :: Test the delete action."><span class="description">Test the delete action.</span><pre>testDelete()</pre></a></li>
+<li class="method public "><a href="#method_testDelete404" title="testDelete404 :: Test trying to delete a record that doesn't exist."><span class="description">Test trying to delete a record that doesn't exist.</span><pre>testDelete404()</pre></a></li>
+<li class="method public "><a href="#method_testFormHtml" title="testFormHtml :: Test the formHtml method."><span class="description">Test the formHtml method.</span><pre>testFormHtml()</pre></a></li>
+<li class="method public "><a href="#method_testFormWithId" title="testFormWithId :: Test the form action with an id."><span class="description">Test the form action with an id.</span><pre>testFormWithId()</pre></a></li>
+<li class="method public "><a href="#method_testFormWithoutId" title="testFormWithoutId :: Test the form action without an id."><span class="description">Test the form action without an id.</span><pre>testFormWithoutId()</pre></a></li>
+<li class="method public "><a href="#method_testListAction" title="testListAction :: Test a simple List."><span class="description">Test a simple List.</span><pre>testListAction()</pre></a></li>
+<li class="method public "><a href="#method_testListActionWithOptions" title="testListActionWithOptions :: Test a List with Options."><span class="description">Test a List with Options.</span><pre>testListActionWithOptions()</pre></a></li>
+<li class="method public "><a href="#method_testListHtml" title="testListHtml :: Test the listHtml method with a standard response."><span class="description">Test the listHtml method with a standard response.</span><pre>testListHtml()</pre></a></li>
+<li class="method public "><a href="#method_testModelNameAccessors" title="testModelNameAccessors :: Test the ModelName getter and setter."><span class="description">Test the ModelName getter and setter.</span><pre>testModelNameAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testModelReadHtml" title="testModelReadHtml :: Test the readHtml method with a Model."><span class="description">Test the readHtml method with a Model.</span><pre>testModelReadHtml()</pre></a></li>
+<li class="method public "><a href="#method_testNoResponseCreateHtml" title="testNoResponseCreateHtml :: Test the createHtml method with no Response."><span class="description">Test the createHtml method with no Response.</span><pre>testNoResponseCreateHtml()</pre></a></li>
+<li class="method public "><a href="#method_testNoResponseDeleteHtml" title="testNoResponseDeleteHtml :: Test the deleteHtml method."><span class="description">Test the deleteHtml method.</span><pre>testNoResponseDeleteHtml()</pre></a></li>
+<li class="method public "><a href="#method_testNoResponseFormHtml" title="testNoResponseFormHtml :: Test the formHtml method with an invalid Response."><span class="description">Test the formHtml method with an invalid Response.</span><pre>testNoResponseFormHtml()</pre></a></li>
+<li class="method public "><a href="#method_testNoResponseReadHtml" title="testNoResponseReadHtml :: Test the readHtml method with an invalid response."><span class="description">Test the readHtml method with an invalid response.</span><pre>testNoResponseReadHtml()</pre></a></li>
+<li class="method public "><a href="#method_testNoResponseUpdateHtml" title="testNoResponseUpdateHtml :: Test the updateHtml method."><span class="description">Test the updateHtml method.</span><pre>testNoResponseUpdateHtml()</pre></a></li>
+<li class="method public "><a href="#method_testRead" title="testRead :: Test the read action."><span class="description">Test the read action.</span><pre>testRead()</pre></a></li>
+<li class="method public "><a href="#method_testRead404" title="testRead404 :: Test trying to read an non existant model."><span class="description">Test trying to read an non existant model.</span><pre>testRead404()</pre></a></li>
+<li class="method public "><a href="#method_testResponseCreateHtml" title="testResponseCreateHtml :: Test the createHtml method with a standard response."><span class="description">Test the createHtml method with a standard response.</span><pre>testResponseCreateHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseDeleteHtml" title="testResponseDeleteHtml :: Test the deleteHtml method."><span class="description">Test the deleteHtml method.</span><pre>testResponseDeleteHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseFormHtml" title="testResponseFormHtml :: Test the formHtml method."><span class="description">Test the formHtml method.</span><pre>testResponseFormHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseListHtml" title="testResponseListHtml :: Test the listHtml method with a Response."><span class="description">Test the listHtml method with a Response.</span><pre>testResponseListHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseModelIdCreateHtml" title="testResponseModelIdCreateHtml :: Test the createHtml method with a Model with an Id."><span class="description">Test the createHtml method with a Model with an Id.</span><pre>testResponseModelIdCreateHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseReadHtml" title="testResponseReadHtml :: Test the readHtml method with a standard response."><span class="description">Test the readHtml method with a standard response.</span><pre>testResponseReadHtml()</pre></a></li>
+<li class="method public "><a href="#method_testResponseUpdateHtml" title="testResponseUpdateHtml :: Test the updateHtml method."><span class="description">Test the updateHtml method.</span><pre>testResponseUpdateHtml()</pre></a></li>
+<li class="method public "><a href="#method_testUpdate" title="testUpdate :: Test the update action."><span class="description">Test the update action.</span><pre>testUpdate()</pre></a></li>
+<li class="method public "><a href="#method_testUpdate404" title="testUpdate404 :: Test trying to update a record that doesn't exist."><span class="description">Test trying to update a record that doesn't exist.</span><pre>testUpdate404()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_setUp" title="setUp :: Set up the test."><span class="description">Set up the test.</span><pre>setUp()</pre></a></li>
+<li class="method protected "><a href="#method_tearDown" title="tearDown :: Tear down the test."><span class="description">Tear down the test.</span><pre>tearDown()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_bindingFactory" title="$bindingFactory :: "><span class="description"></span><pre>$bindingFactory</pre></a></li>
+<li class="property protected "><a href="#property_container" title="$container :: "><span class="description"></span><pre>$container</pre></a></li>
+<li class="property protected "><a href="#property_controller" title="$controller :: "><span class="description"></span><pre>$controller</pre></a></li>
+<li class="property protected "><a href="#property_renderer" title="$renderer :: "><span class="description"></span><pre>$renderer</pre></a></li>
+<li class="property protected "><a href="#property_request" title="$request :: "><span class="description"></span><pre>$request</pre></a></li>
+<li class="property protected "><a href="#property_requestContext" title="$requestContext :: "><span class="description"></span><pre>$requestContext</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Base\Tests\Controllers\ModelControllerTest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.Controllers.html">Controllers</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Base.Tests.Controllers.ModelControllerTest.html">ModelControllerTest</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to test the \Backend\Base\Controllers\ModelController class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/BaseTests.html">BaseTests</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@backend-php.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_dataNoResponseHtml"></a><div class="element clickable method public method_dataNoResponseHtml" data-toggle="collapse" data-target=".method_dataNoResponseHtml .collapse">
+<h2>Data provider for Test that check Html Methods for invalid responses</h2>
+<pre>dataNoResponseHtml() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_testCreate"></a><div class="element clickable method public method_testCreate" data-toggle="collapse" data-target=".method_testCreate .collapse">
+<h2>Test the create action.</h2>
+<pre>testCreate() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testDelete"></a><div class="element clickable method public method_testDelete" data-toggle="collapse" data-target=".method_testDelete .collapse">
+<h2>Test the delete action.</h2>
+<pre>testDelete() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testDelete404"></a><div class="element clickable method public method_testDelete404" data-toggle="collapse" data-target=".method_testDelete404 .collapse">
+<h2>Test trying to delete a record that doesn't exist.</h2>
+<pre>testDelete404() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testFormHtml"></a><div class="element clickable method public method_testFormHtml" data-toggle="collapse" data-target=".method_testFormHtml .collapse">
+<h2>Test the formHtml method.</h2>
+<pre>testFormHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testFormWithId"></a><div class="element clickable method public method_testFormWithId" data-toggle="collapse" data-target=".method_testFormWithId .collapse">
+<h2>Test the form action with an id.</h2>
+<pre>testFormWithId() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testFormWithoutId"></a><div class="element clickable method public method_testFormWithoutId" data-toggle="collapse" data-target=".method_testFormWithoutId .collapse">
+<h2>Test the form action without an id.</h2>
+<pre>testFormWithoutId() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testListAction"></a><div class="element clickable method public method_testListAction" data-toggle="collapse" data-target=".method_testListAction .collapse">
+<h2>Test a simple List.</h2>
+<pre>testListAction() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testListActionWithOptions"></a><div class="element clickable method public method_testListActionWithOptions" data-toggle="collapse" data-target=".method_testListActionWithOptions .collapse">
+<h2>Test a List with Options.</h2>
+<pre>testListActionWithOptions() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testListHtml"></a><div class="element clickable method public method_testListHtml" data-toggle="collapse" data-target=".method_testListHtml .collapse">
+<h2>Test the listHtml method with a standard response.</h2>
+<pre>testListHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testModelNameAccessors"></a><div class="element clickable method public method_testModelNameAccessors" data-toggle="collapse" data-target=".method_testModelNameAccessors .collapse">
+<h2>Test the ModelName getter and setter.</h2>
+<pre>testModelNameAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testModelReadHtml"></a><div class="element clickable method public method_testModelReadHtml" data-toggle="collapse" data-target=".method_testModelReadHtml .collapse">
+<h2>Test the readHtml method with a Model.</h2>
+<pre>testModelReadHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testNoResponseCreateHtml"></a><div class="element clickable method public method_testNoResponseCreateHtml" data-toggle="collapse" data-target=".method_testNoResponseCreateHtml .collapse">
+<h2>Test the createHtml method with no Response.</h2>
+<pre>testNoResponseCreateHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testNoResponseDeleteHtml"></a><div class="element clickable method public method_testNoResponseDeleteHtml" data-toggle="collapse" data-target=".method_testNoResponseDeleteHtml .collapse">
+<h2>Test the deleteHtml method.</h2>
+<pre>testNoResponseDeleteHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testNoResponseFormHtml"></a><div class="element clickable method public method_testNoResponseFormHtml" data-toggle="collapse" data-target=".method_testNoResponseFormHtml .collapse">
+<h2>Test the formHtml method with an invalid Response.</h2>
+<pre>testNoResponseFormHtml($result) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>expectedException</th>
+<td>RuntimeException</td>
+</tr>
+<tr>
+<th>expectedExceptionMessage</th>
+<td>Unknown Read Action Result</td>
+</tr>
+<tr>
+<th>dataProvider</th>
+<td>dataNoResponseHtml</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$result</h4></div>
+</div></div>
+</div>
+<a id="method_testNoResponseReadHtml"></a><div class="element clickable method public method_testNoResponseReadHtml" data-toggle="collapse" data-target=".method_testNoResponseReadHtml .collapse">
+<h2>Test the readHtml method with an invalid response.</h2>
+<pre>testNoResponseReadHtml($result) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>expectedException</th>
+<td>RuntimeException</td>
+</tr>
+<tr>
+<th>expectedExceptionMessage</th>
+<td>Unknown Read Action Result</td>
+</tr>
+<tr>
+<th>dataProvider</th>
+<td>dataNoResponseHtml</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$result</h4></div>
+</div></div>
+</div>
+<a id="method_testNoResponseUpdateHtml"></a><div class="element clickable method public method_testNoResponseUpdateHtml" data-toggle="collapse" data-target=".method_testNoResponseUpdateHtml .collapse">
+<h2>Test the updateHtml method.</h2>
+<pre>testNoResponseUpdateHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testRead"></a><div class="element clickable method public method_testRead" data-toggle="collapse" data-target=".method_testRead .collapse">
+<h2>Test the read action.</h2>
+<pre>testRead() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testRead404"></a><div class="element clickable method public method_testRead404" data-toggle="collapse" data-target=".method_testRead404 .collapse">
+<h2>Test trying to read an non existant model.</h2>
+<pre>testRead404() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseCreateHtml"></a><div class="element clickable method public method_testResponseCreateHtml" data-toggle="collapse" data-target=".method_testResponseCreateHtml .collapse">
+<h2>Test the createHtml method with a standard response.</h2>
+<pre>testResponseCreateHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseDeleteHtml"></a><div class="element clickable method public method_testResponseDeleteHtml" data-toggle="collapse" data-target=".method_testResponseDeleteHtml .collapse">
+<h2>Test the deleteHtml method.</h2>
+<pre>testResponseDeleteHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseFormHtml"></a><div class="element clickable method public method_testResponseFormHtml" data-toggle="collapse" data-target=".method_testResponseFormHtml .collapse">
+<h2>Test the formHtml method.</h2>
+<pre>testResponseFormHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseListHtml"></a><div class="element clickable method public method_testResponseListHtml" data-toggle="collapse" data-target=".method_testResponseListHtml .collapse">
+<h2>Test the listHtml method with a Response.</h2>
+<pre>testResponseListHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseModelIdCreateHtml"></a><div class="element clickable method public method_testResponseModelIdCreateHtml" data-toggle="collapse" data-target=".method_testResponseModelIdCreateHtml .collapse">
+<h2>Test the createHtml method with a Model with an Id.</h2>
+<pre>testResponseModelIdCreateHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseReadHtml"></a><div class="element clickable method public method_testResponseReadHtml" data-toggle="collapse" data-target=".method_testResponseReadHtml .collapse">
+<h2>Test the readHtml method with a standard response.</h2>
+<pre>testResponseReadHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testResponseUpdateHtml"></a><div class="element clickable method public method_testResponseUpdateHtml" data-toggle="collapse" data-target=".method_testResponseUpdateHtml .collapse">
+<h2>Test the updateHtml method.</h2>
+<pre>testResponseUpdateHtml() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testUpdate"></a><div class="element clickable method public method_testUpdate" data-toggle="collapse" data-target=".method_testUpdate .collapse">
+<h2>Test the update action.</h2>
+<pre>testUpdate() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testUpdate404"></a><div class="element clickable method public method_testUpdate404" data-toggle="collapse" data-target=".method_testUpdate404 .collapse">
+<h2>Test trying to update a record that doesn't exist.</h2>
+<pre>testUpdate404() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setUp"></a><div class="element clickable method protected method_setUp" data-toggle="collapse" data-target=".method_setUp .collapse">
+<h2>Set up the test.</h2>
+<pre>setUp() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_tearDown"></a><div class="element clickable method protected method_tearDown" data-toggle="collapse" data-target=".method_tearDown .collapse">
+<h2>Tear down the test.</h2>
+<pre>tearDown() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_bindingFactory"> </a><div class="element clickable property protected property_bindingFactory" data-toggle="collapse" data-target=".property_bindingFactory .collapse">
+<h2></h2>
+<pre>$bindingFactory </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_container"> </a><div class="element clickable property protected property_container" data-toggle="collapse" data-target=".property_container .collapse">
+<h2></h2>
+<pre>$container </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_controller"> </a><div class="element clickable property protected property_controller" data-toggle="collapse" data-target=".property_controller .collapse">
+<h2></h2>
+<pre>$controller </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_renderer"> </a><div class="element clickable property protected property_renderer" data-toggle="collapse" data-target=".property_renderer .collapse">
+<h2></h2>
+<pre>$renderer </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_request"> </a><div class="element clickable property protected property_request" data-toggle="collapse" data-target=".property_request .collapse">
+<h2></h2>
+<pre>$request </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_requestContext"> </a><div class="element clickable property protected property_requestContext" data-toggle="collapse" data-target=".property_requestContext .collapse">
+<h2></h2>
+<pre>$requestContext </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Core\Tests\RequestTest</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_dataBody" title="dataBody :: Data provider for testBody."><span class="description">Data provider for testBody.</span><pre>dataBody()</pre></a></li>
+<li class="method public "><a href="#method_dataGetMimeType" title="dataGetMimeType :: Data provider for testGetMimeType."><span class="description">Data provider for testGetMimeType.</span><pre>dataGetMimeType()</pre></a></li>
+<li class="method public "><a href="#method_dataParseContent" title="dataParseContent :: Data for the testParseContent method."><span class="description">Data for the testParseContent method.</span><pre>dataParseContent()</pre></a></li>
+<li class="method public "><a href="#method_dataPaths" title="dataPaths :: Data provider for testPaths."><span class="description">Data provider for testPaths.</span><pre>dataPaths()</pre></a></li>
+<li class="method public "><a href="#method_testBody" title="testBody :: Test setting the body."><span class="description">Test setting the body.</span><pre>testBody()</pre></a></li>
+<li class="method public "><a href="#method_testBuildHeaders" title="testBuildHeaders :: Test building headers."><span class="description">Test building headers.</span><pre>testBuildHeaders()</pre></a></li>
+<li class="method public "><a href="#method_testCliOrEmptyGetMimeType" title="testCliOrEmptyGetMimeType :: Test the getMimeType method for the CLI or empty mime types."><span class="description">Test the getMimeType method for the CLI or empty mime types.</span><pre>testCliOrEmptyGetMimeType()</pre></a></li>
+<li class="method public "><a href="#method_testConstructor" title="testConstructor :: Test the bare constructor."><span class="description">Test the bare constructor.</span><pre>testConstructor()</pre></a></li>
+<li class="method public "><a href="#method_testCustomPort" title="testCustomPort :: Test a Custom Port"><span class="description">Test a Custom Port</span><pre>testCustomPort()</pre></a></li>
+<li class="method public "><a href="#method_testEmptyQuery" title="testEmptyQuery :: Test an URL without a query"><span class="description">Test an URL without a query</span><pre>testEmptyQuery()</pre></a></li>
+<li class="method public "><a href="#method_testExtensionAccessors" title="testExtensionAccessors :: Test the Extension Accessors."><span class="description">Test the Extension Accessors.</span><pre>testExtensionAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testGetBody" title="testGetBody :: Test getting the body."><span class="description">Test getting the body.</span><pre>testGetBody()</pre></a></li>
+<li class="method public "><a href="#method_testGetBodyFromCli" title="testGetBodyFromCli :: Test getting the body from the CLI"><span class="description">Test getting the body from the CLI</span><pre>testGetBodyFromCli()</pre></a></li>
+<li class="method public "><a href="#method_testGetExtension" title="testGetExtension :: Test the getExtension method."><span class="description">Test the getExtension method.</span><pre>testGetExtension()</pre></a></li>
+<li class="method public "><a href="#method_testGetMimeType" title="testGetMimeType :: Test the getMimeType method."><span class="description">Test the getMimeType method.</span><pre>testGetMimeType()</pre></a></li>
+<li class="method public "><a href="#method_testGetSpecifiedFormat" title="testGetSpecifiedFormat :: Test the getSpecifiedFormat method."><span class="description">Test the getSpecifiedFormat method.</span><pre>testGetSpecifiedFormat()</pre></a></li>
+<li class="method public "><a href="#method_testHeaderAccessors" title="testHeaderAccessors :: Test setting and getting a specific header."><span class="description">Test setting and getting a specific header.</span><pre>testHeaderAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testHeadersAccessors" title="testHeadersAccessors :: Test setting and getting the headers."><span class="description">Test setting and getting the headers.</span><pre>testHeadersAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testHttps" title="testHttps :: Test HTTPS"><span class="description">Test HTTPS</span><pre>testHttps()</pre></a></li>
+<li class="method public "><a href="#method_testInputStreamAccessors" title="testInputStreamAccessors :: Test the Input Strean setter and getter."><span class="description">Test the Input Strean setter and getter.</span><pre>testInputStreamAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testIsMethod" title="testIsMethod :: Test the different isMethod functions."><span class="description">Test the different isMethod functions.</span><pre>testIsMethod()</pre></a></li>
+<li class="method public "><a href="#method_testMethodAccessors" title="testMethodAccessors :: Test Method getter and setter."><span class="description">Test Method getter and setter.</span><pre>testMethodAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testMimeTypeAccessors" title="testMimeTypeAccessors :: Test the Mime Type Accessors."><span class="description">Test the Mime Type Accessors.</span><pre>testMimeTypeAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testNoIndex" title="testNoIndex :: Test an URL without the index.php part"><span class="description">Test an URL without the index.php part</span><pre>testNoIndex()</pre></a></li>
+<li class="method public "><a href="#method_testParseContent" title="testParseContent :: Test the parsing of content."><span class="description">Test the parsing of content.</span><pre>testParseContent()</pre></a></li>
+<li class="method public "><a href="#method_testParseFileContent" title="testParseFileContent :: Test parsing content from a file"><span class="description">Test parsing content from a file</span><pre>testParseFileContent()</pre></a></li>
+<li class="method public "><a href="#method_testPathAccessors" title="testPathAccessors :: Test Path getter and setter"><span class="description">Test Path getter and setter</span><pre>testPathAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testPaths" title="testPaths :: Test the parsing of the path."><span class="description">Test the parsing of the path.</span><pre>testPaths()</pre></a></li>
+<li class="method public "><a href="#method_testQueryAccessors" title="testQueryAccessors :: Test the Query Accessors."><span class="description">Test the Query Accessors.</span><pre>testQueryAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testServerInfoAccessors" title="testServerInfoAccessors :: Test setting a server info value."><span class="description">Test setting a server info value.</span><pre>testServerInfoAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testSetMethodException" title="testSetMethodException :: Test the setMethod method."><span class="description">Test the setMethod method.</span><pre>testSetMethodException()</pre></a></li>
+<li class="method public "><a href="#method_testSimpleQuery" title="testSimpleQuery :: Test a simple Query"><span class="description">Test a simple Query</span><pre>testSimpleQuery()</pre></a></li>
+<li class="method public "><a href="#method_testSpecifiedFormatAccessors" title="testSpecifiedFormatAccessors :: Test the Specified Format Accessors."><span class="description">Test the Specified Format Accessors.</span><pre>testSpecifiedFormatAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testUnknownContent" title="testUnknownContent :: Test unknown content"><span class="description">Test unknown content</span><pre>testUnknownContent()</pre></a></li>
+<li class="method public "><a href="#method_testUrl" title="testUrl :: Test the getUrl and prepareUrl methods"><span class="description">Test the getUrl and prepareUrl methods</span><pre>testUrl()</pre></a></li>
+<li class="method public "><a href="#method_testUrlAccessors" title="testUrlAccessors :: Test the URL Accessors."><span class="description">Test the URL Accessors.</span><pre>testUrlAccessors()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_setUp" title="setUp :: Set up the test"><span class="description">Set up the test</span><pre>setUp()</pre></a></li>
+<li class="method protected "><a href="#method_tearDown" title="tearDown :: Tear down the test"><span class="description">Tear down the test</span><pre>tearDown()</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Core\Tests\RequestTest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Core.Tests.RequestTest.html">RequestTest</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to test the \Backend\Core\Controller class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/CoreTests.html">CoreTests</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@backend-php.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+<tr>
+<th>backupGlobals</th>
+<td>enabled</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_dataBody"></a><div class="element clickable method public method_dataBody" data-toggle="collapse" data-target=".method_dataBody .collapse">
+<h2>Data provider for testBody.</h2>
+<pre>dataBody() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_dataGetMimeType"></a><div class="element clickable method public method_dataGetMimeType" data-toggle="collapse" data-target=".method_dataGetMimeType .collapse">
+<h2>Data provider for testGetMimeType.</h2>
+<pre>dataGetMimeType() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_dataParseContent"></a><div class="element clickable method public method_dataParseContent" data-toggle="collapse" data-target=".method_dataParseContent .collapse">
+<h2>Data for the testParseContent method.</h2>
+<pre>dataParseContent() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_dataPaths"></a><div class="element clickable method public method_dataPaths" data-toggle="collapse" data-target=".method_dataPaths .collapse">
+<h2>Data provider for testPaths.</h2>
+<pre>dataPaths() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_testBody"></a><div class="element clickable method public method_testBody" data-toggle="collapse" data-target=".method_testBody .collapse">
+<h2>Test setting the body.</h2>
+<pre>testBody(mixed $body) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>dataProvider</th>
+<td>dataBody</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$body</h4>
+<code>mixed</code><p>The body to test.</p></div>
+</div></div>
+</div>
+<a id="method_testBuildHeaders"></a><div class="element clickable method public method_testBuildHeaders" data-toggle="collapse" data-target=".method_testBuildHeaders .collapse">
+<h2>Test building headers.</h2>
+<pre>testBuildHeaders() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCliOrEmptyGetMimeType"></a><div class="element clickable method public method_testCliOrEmptyGetMimeType" data-toggle="collapse" data-target=".method_testCliOrEmptyGetMimeType .collapse">
+<h2>Test the getMimeType method for the CLI or empty mime types.</h2>
+<pre>testCliOrEmptyGetMimeType() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConstructor"></a><div class="element clickable method public method_testConstructor" data-toggle="collapse" data-target=".method_testConstructor .collapse">
+<h2>Test the bare constructor.</h2>
+<pre>testConstructor() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCustomPort"></a><div class="element clickable method public method_testCustomPort" data-toggle="collapse" data-target=".method_testCustomPort .collapse">
+<h2>Test a Custom Port</h2>
+<pre>testCustomPort() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testEmptyQuery"></a><div class="element clickable method public method_testEmptyQuery" data-toggle="collapse" data-target=".method_testEmptyQuery .collapse">
+<h2>Test an URL without a query</h2>
+<pre>testEmptyQuery() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testExtensionAccessors"></a><div class="element clickable method public method_testExtensionAccessors" data-toggle="collapse" data-target=".method_testExtensionAccessors .collapse">
+<h2>Test the Extension Accessors.</h2>
+<pre>testExtensionAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testGetBody"></a><div class="element clickable method public method_testGetBody" data-toggle="collapse" data-target=".method_testGetBody .collapse">
+<h2>Test getting the body.</h2>
+<pre>testGetBody() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testGetBodyFromCli"></a><div class="element clickable method public method_testGetBodyFromCli" data-toggle="collapse" data-target=".method_testGetBodyFromCli .collapse">
+<h2>Test getting the body from the CLI</h2>
+<pre>testGetBodyFromCli() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testGetExtension"></a><div class="element clickable method public method_testGetExtension" data-toggle="collapse" data-target=".method_testGetExtension .collapse">
+<h2>Test the getExtension method.</h2>
+<pre>testGetExtension() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testGetMimeType"></a><div class="element clickable method public method_testGetMimeType" data-toggle="collapse" data-target=".method_testGetMimeType .collapse">
+<h2>Test the getMimeType method.</h2>
+<pre>testGetMimeType(string $acceptHeader, string $expected) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>dataProvider</th>
+<td>dataGetMimeType();</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$acceptHeader</h4>
+<code>string</code><p>The accept header to check.</p></div>
+<div class="subelement argument">
+<h4>$expected</h4>
+<code>string</code><p>The expected result.</p></div>
+</div></div>
+</div>
+<a id="method_testGetSpecifiedFormat"></a><div class="element clickable method public method_testGetSpecifiedFormat" data-toggle="collapse" data-target=".method_testGetSpecifiedFormat .collapse">
+<h2>Test the getSpecifiedFormat method.</h2>
+<pre>testGetSpecifiedFormat() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testHeaderAccessors"></a><div class="element clickable method public method_testHeaderAccessors" data-toggle="collapse" data-target=".method_testHeaderAccessors .collapse">
+<h2>Test setting and getting a specific header.</h2>
+<pre>testHeaderAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testHeadersAccessors"></a><div class="element clickable method public method_testHeadersAccessors" data-toggle="collapse" data-target=".method_testHeadersAccessors .collapse">
+<h2>Test setting and getting the headers.</h2>
+<pre>testHeadersAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testHttps"></a><div class="element clickable method public method_testHttps" data-toggle="collapse" data-target=".method_testHttps .collapse">
+<h2>Test HTTPS</h2>
+<pre>testHttps() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testInputStreamAccessors"></a><div class="element clickable method public method_testInputStreamAccessors" data-toggle="collapse" data-target=".method_testInputStreamAccessors .collapse">
+<h2>Test the Input Strean setter and getter.</h2>
+<pre>testInputStreamAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIsMethod"></a><div class="element clickable method public method_testIsMethod" data-toggle="collapse" data-target=".method_testIsMethod .collapse">
+<h2>Test the different isMethod functions.</h2>
+<pre>testIsMethod() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testMethodAccessors"></a><div class="element clickable method public method_testMethodAccessors" data-toggle="collapse" data-target=".method_testMethodAccessors .collapse">
+<h2>Test Method getter and setter.</h2>
+<pre>testMethodAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testMimeTypeAccessors"></a><div class="element clickable method public method_testMimeTypeAccessors" data-toggle="collapse" data-target=".method_testMimeTypeAccessors .collapse">
+<h2>Test the Mime Type Accessors.</h2>
+<pre>testMimeTypeAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testNoIndex"></a><div class="element clickable method public method_testNoIndex" data-toggle="collapse" data-target=".method_testNoIndex .collapse">
+<h2>Test an URL without the index.php part</h2>
+<pre>testNoIndex() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testParseContent"></a><div class="element clickable method public method_testParseContent" data-toggle="collapse" data-target=".method_testParseContent .collapse">
+<h2>Test the parsing of content.</h2>
+<pre>testParseContent(string $contentType, string $filename) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>dataProvider</th>
+<td>dataParseContent</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contentType</h4>
+<code>string</code><p>The content type.</p></div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The name of file where input should be read from.</p></div>
+</div></div>
+</div>
+<a id="method_testParseFileContent"></a><div class="element clickable method public method_testParseFileContent" data-toggle="collapse" data-target=".method_testParseFileContent .collapse">
+<h2>Test parsing content from a file</h2>
+<pre>testParseFileContent() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testPathAccessors"></a><div class="element clickable method public method_testPathAccessors" data-toggle="collapse" data-target=".method_testPathAccessors .collapse">
+<h2>Test Path getter and setter</h2>
+<pre>testPathAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testPaths"></a><div class="element clickable method public method_testPaths" data-toggle="collapse" data-target=".method_testPaths .collapse">
+<h2>Test the parsing of the path.</h2>
+<pre>testPaths($url, $expected) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>dataProvider</th>
+<td>dataPaths</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+<div class="subelement argument"><h4>$expected</h4></div>
+</div></div>
+</div>
+<a id="method_testQueryAccessors"></a><div class="element clickable method public method_testQueryAccessors" data-toggle="collapse" data-target=".method_testQueryAccessors .collapse">
+<h2>Test the Query Accessors.</h2>
+<pre>testQueryAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testServerInfoAccessors"></a><div class="element clickable method public method_testServerInfoAccessors" data-toggle="collapse" data-target=".method_testServerInfoAccessors .collapse">
+<h2>Test setting a server info value.</h2>
+<pre>testServerInfoAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testSetMethodException"></a><div class="element clickable method public method_testSetMethodException" data-toggle="collapse" data-target=".method_testSetMethodException .collapse">
+<h2>Test the setMethod method.</h2>
+<pre>testSetMethodException() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>expectedException</th>
+<td>\Backend\Core\Exception</td>
+</tr>
+<tr>
+<th>expectedExceptionMessage</th>
+<td>Unsupported method SOMETHING</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_testSimpleQuery"></a><div class="element clickable method public method_testSimpleQuery" data-toggle="collapse" data-target=".method_testSimpleQuery .collapse">
+<h2>Test a simple Query</h2>
+<pre>testSimpleQuery() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testSpecifiedFormatAccessors"></a><div class="element clickable method public method_testSpecifiedFormatAccessors" data-toggle="collapse" data-target=".method_testSpecifiedFormatAccessors .collapse">
+<h2>Test the Specified Format Accessors.</h2>
+<pre>testSpecifiedFormatAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testUnknownContent"></a><div class="element clickable method public method_testUnknownContent" data-toggle="collapse" data-target=".method_testUnknownContent .collapse">
+<h2>Test unknown content</h2>
+<pre>testUnknownContent() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>expectedException</th>
+<td>\Backend\Core\Exception</td>
+</tr>
+<tr>
+<th>expectedExceptionMessage</th>
+<td>Unknown Content Type: unknown/content</td>
+</tr>
+<tr>
+<th>expectedExceptionCode</th>
+<td>400</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_testUrl"></a><div class="element clickable method public method_testUrl" data-toggle="collapse" data-target=".method_testUrl .collapse">
+<h2>Test the getUrl and prepareUrl methods</h2>
+<pre>testUrl() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testUrlAccessors"></a><div class="element clickable method public method_testUrlAccessors" data-toggle="collapse" data-target=".method_testUrlAccessors .collapse">
+<h2>Test the URL Accessors.</h2>
+<pre>testUrlAccessors() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setUp"></a><div class="element clickable method protected method_setUp" data-toggle="collapse" data-target=".method_setUp .collapse">
+<h2>Set up the test</h2>
+<pre>setUp() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_tearDown"></a><div class="element clickable method protected method_tearDown" data-toggle="collapse" data-target=".method_tearDown .collapse">
+<h2>Tear down the test</h2>
+<pre>tearDown() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

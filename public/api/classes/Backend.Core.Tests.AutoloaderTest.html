@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Core\Tests\AutoloaderTest</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_setUp" title="setUp :: Set up the test"><span class="description">Set up the test</span><pre>setUp()</pre></a></li>
+<li class="method public "><a href="#method_tearDown" title="tearDown :: Tear down the test"><span class="description">Tear down the test</span><pre>tearDown()</pre></a></li>
+<li class="method public "><a href="#method_testAutoload" title="testAutoload :: Test if the autoload function works correctly"><span class="description">Test if the autoload function works correctly</span><pre>testAutoload()</pre></a></li>
+<li class="method public "><a href="#method_testBaseFoldersAccessors" title="testBaseFoldersAccessors :: Test the base folders getter and settor"><span class="description">Test the base folders getter and settor</span><pre>testBaseFoldersAccessors()</pre></a></li>
+<li class="method public "><a href="#method_testLastGasp" title="testLastGasp :: Test the last gasp attempt to load a class"><span class="description">Test the last gasp attempt to load a class</span><pre>testLastGasp()</pre></a></li>
+<li class="method public "><a href="#method_testNonExistantClass" title="testNonExistantClass :: Test if the autoloader doesn't find a class"><span class="description">Test if the autoloader doesn't find a class</span><pre>testNonExistantClass()</pre></a></li>
+<li class="method public "><a href="#method_testRegister" title="testRegister :: Test if the register function works correctly"><span class="description">Test if the register function works correctly</span><pre>testRegister()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_originalPath" title="$originalPath :: Original include path"><span class="description"></span><pre>$originalPath</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Core\Tests\AutoloaderTest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Core.Tests.AutoloaderTest.html">AutoloaderTest</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to test the \Backend\Core\Utilities\Autoloader class</p>
+<div class="details">
+<div class="long_description"><p>Notice the use of class_exists($className, FALSE) and an explicit call to the
+autokload function to prevent the already registered autoloaders from kicking in.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/CoreTests.Utilities.html">CoreTests</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Utilities</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@backend-php.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_setUp"></a><div class="element clickable method public method_setUp" data-toggle="collapse" data-target=".method_setUp .collapse">
+<h2>Set up the test</h2>
+<pre>setUp() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_tearDown"></a><div class="element clickable method public method_tearDown" data-toggle="collapse" data-target=".method_tearDown .collapse">
+<h2>Tear down the test</h2>
+<pre>tearDown() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testAutoload"></a><div class="element clickable method public method_testAutoload" data-toggle="collapse" data-target=".method_testAutoload .collapse">
+<h2>Test if the autoload function works correctly</h2>
+<pre>testAutoload() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testBaseFoldersAccessors"></a><div class="element clickable method public method_testBaseFoldersAccessors" data-toggle="collapse" data-target=".method_testBaseFoldersAccessors .collapse">
+<h2>Test the base folders getter and settor</h2>
+<pre>testBaseFoldersAccessors() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testLastGasp"></a><div class="element clickable method public method_testLastGasp" data-toggle="collapse" data-target=".method_testLastGasp .collapse">
+<h2>Test the last gasp attempt to load a class</h2>
+<pre>testLastGasp() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testNonExistantClass"></a><div class="element clickable method public method_testNonExistantClass" data-toggle="collapse" data-target=".method_testNonExistantClass .collapse">
+<h2>Test if the autoloader doesn't find a class</h2>
+<pre>testNonExistantClass() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testRegister"></a><div class="element clickable method public method_testRegister" data-toggle="collapse" data-target=".method_testRegister .collapse">
+<h2>Test if the register function works correctly</h2>
+<pre>testRegister() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_originalPath"> </a><div class="element clickable property protected property_originalPath" data-toggle="collapse" data-target=".property_originalPath .collapse">
+<h2></h2>
+<pre>$originalPath : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1345 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » Backend</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Namespaces</li>
+<li>
+<span class="empty-namespace"><i class="icon-stop"></i>Backend</span><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Base.html" title="Base"><i class="icon-th"></i>Base</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Base.Bindings.html" title="Bindings"><i class="icon-th"></i>Bindings</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Controllers.html" title="Controllers"><i class="icon-th"></i>Controllers</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Formats.html" title="Formats"><i class="icon-th"></i>Formats</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Listener.html" title="Listener"><i class="icon-th"></i>Listener</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Models.html" title="Models"><i class="icon-th"></i>Models</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Tests.html" title="Tests"><i class="icon-th"></i>Tests</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Base.Tests.Controllers.html" title="Controllers"><i class="icon-th"></i>Controllers</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Tests.Formats.html" title="Formats"><i class="icon-th"></i>Formats</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Tests.Listener.html" title="Listener"><i class="icon-th"></i>Listener</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Tests.Utilities.html" title="Utilities"><i class="icon-th"></i>Utilities</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Base.Utilities.html" title="Utilities"><i class="icon-th"></i>Utilities</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.html" title="Core"><i class="icon-th"></i>Core</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Core.Event.html" title="Event"><i class="icon-th"></i>Event</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.Exceptions.html" title="Exceptions"><i class="icon-th"></i>Exceptions</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.Listener.html" title="Listener"><i class="icon-th"></i>Listener</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.Tests.html" title="Tests"><i class="icon-th"></i>Tests</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Core.Tests.Listener.html" title="Listener"><i class="icon-th"></i>Listener</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.Tests.Utilities.html" title="Utilities"><i class="icon-th"></i>Utilities</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Core.Utilities.html" title="Utilities"><i class="icon-th"></i>Utilities</a><ul class="nav nav-list nav-namespaces"><li>
+<a href="../namespaces/Backend.Core.Utilities.Tests.html" title="Tests"><i class="icon-th"></i>Tests</a><ul class="nav nav-list nav-namespaces"></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Interfaces.html" title="Interfaces"><i class="icon-th"></i>Interfaces</a><ul class="nav nav-list nav-namespaces"><li>
+<a href="../namespaces/Backend.Interfaces.Tests.html" title="Tests"><i class="icon-th"></i>Tests</a><ul class="nav nav-list nav-namespaces"></ul>
+</li></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Modules.html" title="Modules"><i class="icon-th"></i>Modules</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Backend.Modules.Bindings.html" title="Bindings"><i class="icon-th"></i>Bindings</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Modules.EventDispatcher.html" title="EventDispatcher"><i class="icon-th"></i>EventDispatcher</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Modules.File.html" title="File"><i class="icon-th"></i>File</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Backend.Modules.Storage.html" title="Storage"><i class="icon-th"></i>Storage</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8 namespace-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../namespaces/Backend.html">Backend</a></li>
+</ul>
+<div class="namespace-indent">
+<div class="alert alert-info">This namespace does not contain any documentable elements</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Controller" class="element ajax clickable class">
+<h1>Controller<a href="../classes/Backend.Base.Controller.html">¶</a>
+</h1>
+<p class="short_description">A Basic Controller that contains Application Logic.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Controller.html" class="more">« More »</a>
+</div>
+<div id="Model" class="element ajax clickable class">
+<h1>Model<a href="../classes/Backend.Base.Model.html">¶</a>
+</h1>
+<p class="short_description">The main Model class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Model.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Bindings.html">Bindings</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="GdataBinding" class="element ajax clickable class">
+<h1>GdataBinding<a href="../classes/Backend.Base.Bindings.GdataBinding.html">¶</a>
+</h1>
+<p class="short_description">Binding for GData connections.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Bindings.GdataBinding.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Controllers.html">Controllers</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ExamplesController" class="element ajax clickable class">
+<h1>ExamplesController<a href="../classes/Backend.Base.Controllers.ExamplesController.html">¶</a>
+</h1>
+<p class="short_description">An example controller containing some sample code</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Controllers.ExamplesController.html" class="more">« More »</a>
+</div>
+<div id="ModelController" class="element ajax clickable class">
+<h1>ModelController<a href="../classes/Backend.Base.Controllers.ModelController.html">¶</a>
+</h1>
+<p class="short_description">The Model Controller provides basic CRUD functionality on Models to Controllers.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Controllers.ModelController.html" class="more">« More »</a>
+</div>
+<div id="ValuesController" class="element ajax clickable class">
+<h1>ValuesController<a href="../classes/Backend.Base.Controllers.ValuesController.html">¶</a>
+</h1>
+<p class="short_description">A simple ModelController showing how to use Bindings and mapping REST actions
+to CRUD methods.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Controllers.ValuesController.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Formats.html">Formats</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Cli" class="element ajax clickable class">
+<h1>Cli<a href="../classes/Backend.Base.Formats.Cli.html">¶</a>
+</h1>
+<p class="short_description">Output a request on the Command Line.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Formats.Cli.html" class="more">« More »</a>
+</div>
+<div id="Html" class="element ajax clickable class">
+<h1>Html<a href="../classes/Backend.Base.Formats.Html.html">¶</a>
+</h1>
+<p class="short_description">Output a request as HTML.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Formats.Html.html" class="more">« More »</a>
+</div>
+<div id="Json" class="element ajax clickable class">
+<h1>Json<a href="../classes/Backend.Base.Formats.Json.html">¶</a>
+</h1>
+<p class="short_description">Output a request in JavaScript Object Notation.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Formats.Json.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Listener.html">Listener</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="BaseListener" class="element ajax clickable class">
+<h1>BaseListener<a href="../classes/Backend.Base.Listener.BaseListener.html">¶</a>
+</h1>
+<p class="short_description">The Base Listener.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Listener.BaseListener.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Models.html">Models</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Value" class="element ajax clickable class">
+<h1>Value<a href="../classes/Backend.Base.Models.Value.html">¶</a>
+</h1>
+<p class="short_description">The main Model class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Models.Value.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ControllerTest" class="element ajax clickable class">
+<h1>ControllerTest<a href="../classes/Backend.Base.Tests.ControllerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Controller class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.ControllerTest.html" class="more">« More »</a>
+</div>
+<div id="ModelTest" class="element ajax clickable class">
+<h1>ModelTest<a href="../classes/Backend.Base.Tests.ModelTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Model class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.ModelTest.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.Controllers.html">Controllers</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ModelControllerTest" class="element ajax clickable class">
+<h1>ModelControllerTest<a href="../classes/Backend.Base.Tests.Controllers.ModelControllerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Controllers\ModelController class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Controllers.ModelControllerTest.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.Formats.html">Formats</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="CliTest" class="element ajax clickable class">
+<h1>CliTest<a href="../classes/Backend.Base.Tests.Formats.CliTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Formats\Cli class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Formats.CliTest.html" class="more">« More »</a>
+</div>
+<div id="HtmlTest" class="element ajax clickable class">
+<h1>HtmlTest<a href="../classes/Backend.Base.Tests.Formats.HtmlTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Formats\Html class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Formats.HtmlTest.html" class="more">« More »</a>
+</div>
+<div id="JsonTest" class="element ajax clickable class">
+<h1>JsonTest<a href="../classes/Backend.Base.Tests.Formats.JsonTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Formats\Json class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Formats.JsonTest.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.Listener.html">Listener</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="BaseListenerTest" class="element ajax clickable class">
+<h1>BaseListenerTest<a href="../classes/Backend.Base.Tests.Listener.BaseListenerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Listener\BaseListener class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Listener.BaseListenerTest.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Tests.Utilities.html">Utilities</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="BindingFactoryTest" class="element ajax clickable class">
+<h1>BindingFactoryTest<a href="../classes/Backend.Base.Tests.Utilities.BindingFactoryTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Utilities\BindingFactory class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Utilities.BindingFactoryTest.html" class="more">« More »</a>
+</div>
+<div id="RenderableTest" class="element ajax clickable class">
+<h1>RenderableTest<a href="../classes/Backend.Base.Tests.Utilities.RenderableTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Utilities\Renderable class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Utilities.RenderableTest.html" class="more">« More »</a>
+</div>
+<div id="StringTest" class="element ajax clickable class">
+<h1>StringTest<a href="../classes/Backend.Base.Tests.Utilities.StringTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Base\Utilities\String class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Tests.Utilities.StringTest.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Utilities.html">Utilities</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="BindingFactory" class="element ajax clickable class">
+<h1>BindingFactory<a href="../classes/Backend.Base.Utilities.BindingFactory.html">¶</a>
+</h1>
+<p class="short_description">Factory class to create Bindings</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Utilities.BindingFactory.html" class="more">« More »</a>
+</div>
+<div id="Renderable" class="element ajax clickable class">
+<h1>Renderable<a href="../classes/Backend.Base.Utilities.Renderable.html">¶</a>
+</h1>
+<p class="short_description">An object that can be Rendered by the Render Utility</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Utilities.Renderable.html" class="more">« More »</a>
+</div>
+<div id="String" class="element ajax clickable class">
+<h1>String<a href="../classes/Backend.Base.Utilities.String.html">¶</a>
+</h1>
+<p class="short_description">Utility String class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Base.Utilities.String.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Application" class="element ajax clickable class">
+<h1>Application<a href="../classes/Backend.Core.Application.html">¶</a>
+</h1>
+<p class="short_description">The main application class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Application.html" class="more">« More »</a>
+</div>
+<div id="Autoloader" class="element ajax clickable class">
+<h1>Autoloader<a href="../classes/Backend.Core.Autoloader.html">¶</a>
+</h1>
+<p class="short_description">The main autoloader.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Autoloader.html" class="more">« More »</a>
+</div>
+<div id="Controller" class="element ajax clickable class">
+<h1>Controller<a href="../classes/Backend.Core.Controller.html">¶</a>
+</h1>
+<p class="short_description">Controller that acts as the connection between Models and Views.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Controller.html" class="more">« More »</a>
+</div>
+<div id="Exception" class="element ajax clickable class">
+<h1>Exception<a href="../classes/Backend.Core.Exception.html">¶</a>
+</h1>
+<p class="short_description">Base Core Exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Exception.html" class="more">« More »</a>
+</div>
+<div id="Request" class="element ajax clickable class">
+<h1>Request<a href="../classes/Backend.Core.Request.html">¶</a>
+</h1>
+<p class="short_description">The Request class which helps determine the Path and request format.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Request.html" class="more">« More »</a>
+</div>
+<div id="Response" class="element ajax clickable class">
+<h1>Response<a href="../classes/Backend.Core.Response.html">¶</a>
+</h1>
+<p class="short_description">The response that will be sent back to the client</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Response.html" class="more">« More »</a>
+</div>
+<div id="TestContainer" class="element ajax clickable class">
+<h1>TestContainer<a href="../classes/Backend.Core.TestContainer.html">¶</a>
+</h1>
+<p class="short_description">Class to test the autoloading of classes in the include path and other controller
+related functions.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.TestContainer.html" class="more">« More »</a>
+</div>
+<div id="TestFormat" class="element ajax clickable class">
+<h1>TestFormat<a href="../classes/Backend.Core.TestFormat.html">¶</a>
+</h1>
+<p class="short_description">Class to test the checking of Formats.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.TestFormat.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Event.html">Event</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="CallbackEvent" class="element ajax clickable class">
+<h1>CallbackEvent<a href="../classes/Backend.Core.Event.CallbackEvent.html">¶</a>
+</h1>
+<p class="short_description">The Callback Event.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Event.CallbackEvent.html" class="more">« More »</a>
+</div>
+<div id="ExceptionEvent" class="element ajax clickable class">
+<h1>ExceptionEvent<a href="../classes/Backend.Core.Event.ExceptionEvent.html">¶</a>
+</h1>
+<p class="short_description">The Exception Event.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Event.ExceptionEvent.html" class="more">« More »</a>
+</div>
+<div id="RequestEvent" class="element ajax clickable class">
+<h1>RequestEvent<a href="../classes/Backend.Core.Event.RequestEvent.html">¶</a>
+</h1>
+<p class="short_description">The RequestEvent Event.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Event.RequestEvent.html" class="more">« More »</a>
+</div>
+<div id="ResponseEvent" class="element ajax clickable class">
+<h1>ResponseEvent<a href="../classes/Backend.Core.Event.ResponseEvent.html">¶</a>
+</h1>
+<p class="short_description">The ResponseEvent Event.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Event.ResponseEvent.html" class="more">« More »</a>
+</div>
+<div id="ResultEvent" class="element ajax clickable class">
+<h1>ResultEvent<a href="../classes/Backend.Core.Event.ResultEvent.html">¶</a>
+</h1>
+<p class="short_description">The ResultEvent Event.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Event.ResultEvent.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Exceptions.html">Exceptions</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ConfigException" class="element ajax clickable class">
+<h1>ConfigException<a href="../classes/Backend.Core.Exceptions.ConfigException.html">¶</a>
+</h1>
+<p class="short_description">Thrown when there's something wrong with the setup of the system.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Exceptions.ConfigException.html" class="more">« More »</a>
+</div>
+<div id="DuckTypeException" class="element ajax clickable class">
+<h1>DuckTypeException<a href="../classes/Backend.Core.Exceptions.DuckTypeException.html">¶</a>
+</h1>
+<p class="short_description">Thrown when an object doesn't behave as expected.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Exceptions.DuckTypeException.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Listener.html">Listener</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="CoreListener" class="element ajax clickable class">
+<h1>CoreListener<a href="../classes/Backend.Core.Listener.CoreListener.html">¶</a>
+</h1>
+<p class="short_description">The Core Listener.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Listener.CoreListener.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.html">Tests</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ApplicationTest" class="element ajax clickable class">
+<h1>ApplicationTest<a href="../classes/Backend.Core.Tests.ApplicationTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Application class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.ApplicationTest.html" class="more">« More »</a>
+</div>
+<div id="AutoloaderTest" class="element ajax clickable class">
+<h1>AutoloaderTest<a href="../classes/Backend.Core.Tests.AutoloaderTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\Autoloader class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.AutoloaderTest.html" class="more">« More »</a>
+</div>
+<div id="ControllerTest" class="element ajax clickable class">
+<h1>ControllerTest<a href="../classes/Backend.Core.Tests.ControllerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Controller class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.ControllerTest.html" class="more">« More »</a>
+</div>
+<div id="RequestTest" class="element ajax clickable class">
+<h1>RequestTest<a href="../classes/Backend.Core.Tests.RequestTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Controller class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.RequestTest.html" class="more">« More »</a>
+</div>
+<div id="ResponseTest" class="element ajax clickable class">
+<h1>ResponseTest<a href="../classes/Backend.Core.Tests.ResponseTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Response class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.ResponseTest.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.Listener.html">Listener</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="CoreListenerTest" class="element ajax clickable class">
+<h1>CoreListenerTest<a href="../classes/Backend.Core.Tests.Listener.CoreListenerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Listener\CoreListener class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Listener.CoreListenerTest.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Tests.Utilities.html">Utilities</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="CallbackFactoryTest" class="element ajax clickable class">
+<h1>CallbackFactoryTest<a href="../classes/Backend.Core.Tests.Utilities.CallbackFactoryTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\CallbackFactory class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.CallbackFactoryTest.html" class="more">« More »</a>
+</div>
+<div id="CallbackTest" class="element ajax clickable class">
+<h1>CallbackTest<a href="../classes/Backend.Core.Tests.Utilities.CallbackTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\Callback class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.CallbackTest.html" class="more">« More »</a>
+</div>
+<div id="ConfigTest" class="element ajax clickable class">
+<h1>ConfigTest<a href="../classes/Backend.Core.Tests.Utilities.ConfigTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\Config class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.ConfigTest.html" class="more">« More »</a>
+</div>
+<div id="FormatterTest" class="element ajax clickable class">
+<h1>FormatterTest<a href="../classes/Backend.Core.Tests.Utilities.FormatterTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\Formatter class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.FormatterTest.html" class="more">« More »</a>
+</div>
+<div id="RequestContextTest" class="element ajax clickable class">
+<h1>RequestContextTest<a href="../classes/Backend.Core.Tests.Utilities.RequestContextTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\RequestContext class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.RequestContextTest.html" class="more">« More »</a>
+</div>
+<div id="RouterTest" class="element ajax clickable class">
+<h1>RouterTest<a href="../classes/Backend.Core.Tests.Utilities.RouterTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\Router class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.RouterTest.html" class="more">« More »</a>
+</div>
+<div id="UrlGeneratorTest" class="element ajax clickable class">
+<h1>UrlGeneratorTest<a href="../classes/Backend.Core.Tests.Utilities.UrlGeneratorTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\UrlGenerator class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Tests.Utilities.UrlGeneratorTest.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Utilities.html">Utilities</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Callback" class="element ajax clickable class">
+<h1>Callback<a href="../classes/Backend.Core.Utilities.Callback.html">¶</a>
+</h1>
+<p class="short_description">Class to handle application configs.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.Callback.html" class="more">« More »</a>
+</div>
+<div id="CallbackFactory" class="element ajax clickable class">
+<h1>CallbackFactory<a href="../classes/Backend.Core.Utilities.CallbackFactory.html">¶</a>
+</h1>
+<p class="short_description">Class to create callbacks from strings and arrays.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.CallbackFactory.html" class="more">« More »</a>
+</div>
+<div id="Config" class="element ajax clickable class">
+<h1>Config<a href="../classes/Backend.Core.Utilities.Config.html">¶</a>
+</h1>
+<p class="short_description">Class to handle application configs.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.Config.html" class="more">« More »</a>
+</div>
+<div id="DependencyInjectionContainer" class="element ajax clickable class">
+<h1>DependencyInjectionContainer<a href="../classes/Backend.Core.Utilities.DependencyInjectionContainer.html">¶</a>
+</h1>
+<p class="short_description">A Dependency Injection Container.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.DependencyInjectionContainer.html" class="more">« More »</a>
+</div>
+<div id="EventDispatcher" class="element ajax clickable class">
+<h1>EventDispatcher<a href="../classes/Backend.Core.Utilities.EventDispatcher.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.EventDispatcher.html" class="more">« More »</a>
+</div>
+<div id="Formatter" class="element ajax clickable class">
+<h1>Formatter<a href="../classes/Backend.Core.Utilities.Formatter.html">¶</a>
+</h1>
+<p class="short_description">Transform results into the specified format.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.Formatter.html" class="more">« More »</a>
+</div>
+<div id="RequestContext" class="element ajax clickable class">
+<h1>RequestContext<a href="../classes/Backend.Core.Utilities.RequestContext.html">¶</a>
+</h1>
+<p class="short_description">Class to define the context of a Request.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.RequestContext.html" class="more">« More »</a>
+</div>
+<div id="Router" class="element ajax clickable class">
+<h1>Router<a href="../classes/Backend.Core.Utilities.Router.html">¶</a>
+</h1>
+<p class="short_description">Class to inspect the Request to determine what callback should be executed.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.Router.html" class="more">« More »</a>
+</div>
+<div id="UrlGenerator" class="element ajax clickable class">
+<h1>UrlGenerator<a href="../classes/Backend.Core.Utilities.UrlGenerator.html">¶</a>
+</h1>
+<p class="short_description">Class to generate URL's using routing information.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.UrlGenerator.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Utilities.html">Utilities</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Utilities.Tests.html">Tests</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="DependencyInjectionContainerTest" class="element ajax clickable class">
+<h1>DependencyInjectionContainerTest<a href="../classes/Backend.Core.Utilities.Tests.DependencyInjectionContainerTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test the \Backend\Core\Utilities\DependencyInjectionContainer class</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Core.Utilities.Tests.DependencyInjectionContainerTest.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Interfaces.html">Interfaces</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="ApplicationInterface" class="element ajax clickable interface">
+<h1>ApplicationInterface<a href="../classes/Backend.Interfaces.ApplicationInterface.html">¶</a>
+</h1>
+<p class="short_description">The Application class wraps the execution process.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ApplicationInterface.html" class="more">« More »</a>
+</div>
+<div id="AuthenticatorInterface" class="element ajax clickable interface">
+<h1>AuthenticatorInterface<a href="../classes/Backend.Interfaces.AuthenticatorInterface.html">¶</a>
+</h1>
+<p class="short_description">Authenticator classes provide a mechanism with which to check a user and it's
+permissions.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.AuthenticatorInterface.html" class="more">« More »</a>
+</div>
+<div id="BindingFactoryInterface" class="element ajax clickable interface">
+<h1>BindingFactoryInterface<a href="../classes/Backend.Interfaces.BindingFactoryInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to create bindings.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.BindingFactoryInterface.html" class="more">« More »</a>
+</div>
+<div id="BindingInterface" class="element ajax clickable interface">
+<h1>BindingInterface<a href="../classes/Backend.Interfaces.BindingInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for Data Bindings</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.BindingInterface.html" class="more">« More »</a>
+</div>
+<div id="CallbackFactoryInterface" class="element ajax clickable interface">
+<h1>CallbackFactoryInterface<a href="../classes/Backend.Interfaces.CallbackFactoryInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to create callbacks from strings and arrays.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.CallbackFactoryInterface.html" class="more">« More »</a>
+</div>
+<div id="CallbackInterface" class="element ajax clickable interface">
+<h1>CallbackInterface<a href="../classes/Backend.Interfaces.CallbackInterface.html">¶</a>
+</h1>
+<p class="short_description">Callable functions or object\class and method pairs to be executed by the
+Application.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.CallbackInterface.html" class="more">« More »</a>
+</div>
+<div id="ConfigInterface" class="element ajax clickable interface">
+<h1>ConfigInterface<a href="../classes/Backend.Interfaces.ConfigInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to abstract config file operations.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ConfigInterface.html" class="more">« More »</a>
+</div>
+<div id="ControllerInterface" class="element ajax clickable interface">
+<h1>ControllerInterface<a href="../classes/Backend.Interfaces.ControllerInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for Controllers that serve as the connection between Models and Views.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ControllerInterface.html" class="more">« More »</a>
+</div>
+<div id="DependencyInjectionContainerInterface" class="element ajax clickable interface">
+<h1>DependencyInjectionContainerInterface<a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html">¶</a>
+</h1>
+<p class="short_description">A dependency injection container that manages dependencies.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.DependencyInjectionContainerInterface.html" class="more">« More »</a>
+</div>
+<div id="FlashInterface" class="element ajax clickable interface">
+<h1>FlashInterface<a href="../classes/Backend.Interfaces.FlashInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for classes that do Flash Session management.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.FlashInterface.html" class="more">« More »</a>
+</div>
+<div id="FormatterInterface" class="element ajax clickable interface">
+<h1>FormatterInterface<a href="../classes/Backend.Interfaces.FormatterInterface.html">¶</a>
+</h1>
+<p class="short_description">Transform results into the specified format.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.FormatterInterface.html" class="more">« More »</a>
+</div>
+<div id="LoggerInterface" class="element ajax clickable interface">
+<h1>LoggerInterface<a href="../classes/Backend.Interfaces.LoggerInterface.html">¶</a>
+</h1>
+<p class="short_description">Logging interface through which messages can be logged.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.LoggerInterface.html" class="more">« More »</a>
+</div>
+<div id="ModelInterface" class="element ajax clickable interface">
+<h1>ModelInterface<a href="../classes/Backend.Interfaces.ModelInterface.html">¶</a>
+</h1>
+<p class="short_description">The base Model interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ModelInterface.html" class="more">« More »</a>
+</div>
+<div id="ParserInterface" class="element ajax clickable interface">
+<h1>ParserInterface<a href="../classes/Backend.Interfaces.ParserInterface.html">¶</a>
+</h1>
+<p class="short_description">A dependency injection container that manages dependencies.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ParserInterface.html" class="more">« More »</a>
+</div>
+<div id="RenderInterface" class="element ajax clickable interface">
+<h1>RenderInterface<a href="../classes/Backend.Interfaces.RenderInterface.html">¶</a>
+</h1>
+<p class="short_description">Utility with which to render templates</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.RenderInterface.html" class="more">« More »</a>
+</div>
+<div id="RequestContextInterface" class="element ajax clickable interface">
+<h1>RequestContextInterface<a href="../classes/Backend.Interfaces.RequestContextInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to define the context of a Request.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.RequestContextInterface.html" class="more">« More »</a>
+</div>
+<div id="RequestInterface" class="element ajax clickable interface">
+<h1>RequestInterface<a href="../classes/Backend.Interfaces.RequestInterface.html">¶</a>
+</h1>
+<p class="short_description">The Request class which helps determine the Query string and request format.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.RequestInterface.html" class="more">« More »</a>
+</div>
+<div id="ResponseInterface" class="element ajax clickable interface">
+<h1>ResponseInterface<a href="../classes/Backend.Interfaces.ResponseInterface.html">¶</a>
+</h1>
+<p class="short_description">The response that will be sent back to the client.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.ResponseInterface.html" class="more">« More »</a>
+</div>
+<div id="RouterInterface" class="element ajax clickable interface">
+<h1>RouterInterface<a href="../classes/Backend.Interfaces.RouterInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to inspect the Request to determine what callback should be executed.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.RouterInterface.html" class="more">« More »</a>
+</div>
+<div id="SessionInterface" class="element ajax clickable interface">
+<h1>SessionInterface<a href="../classes/Backend.Interfaces.SessionInterface.html">¶</a>
+</h1>
+<p class="short_description">Interface for classes that do Session management.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.SessionInterface.html" class="more">« More »</a>
+</div>
+<div id="UrlGeneratorInterface" class="element ajax clickable interface">
+<h1>UrlGeneratorInterface<a href="../classes/Backend.Interfaces.UrlGeneratorInterface.html">¶</a>
+</h1>
+<p class="short_description">Class to generate URL's using routing information.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.UrlGeneratorInterface.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Interfaces.html">Interfaces</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Interfaces.Tests.html">Tests</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="InterfacesTest" class="element ajax clickable class">
+<h1>InterfacesTest<a href="../classes/Backend.Interfaces.Tests.InterfacesTest.html">¶</a>
+</h1>
+<p class="short_description">Class to test all the defined interfaces</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Interfaces.Tests.InterfacesTest.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.html">Modules</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Exception" class="element ajax clickable class">
+<h1>Exception<a href="../classes/Backend.Modules.Exception.html">¶</a>
+</h1>
+<p class="short_description">Base Modules Exception.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Exception.html" class="more">« More »</a>
+</div>
+<div id="Render" class="element ajax clickable class">
+<h1>Render<a href="../classes/Backend.Modules.Render.html">¶</a>
+</h1>
+<p class="short_description">The basic Render class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Render.html" class="more">« More »</a>
+</div>
+<div id="TwigRender" class="element ajax clickable class">
+<h1>TwigRender<a href="../classes/Backend.Modules.TwigRender.html">¶</a>
+</h1>
+<p class="short_description">Render Twig templates.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.TwigRender.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.html">Modules</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.Bindings.html">Bindings</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Binding" class="element ajax clickable class">
+<h1>Binding<a href="../classes/Backend.Modules.Bindings.Binding.html">¶</a>
+</h1>
+<p class="short_description">Abstract class for Data Bindings</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.Binding.html" class="more">« More »</a>
+</div>
+<div id="DatabaseBinding" class="element ajax clickable class">
+<h1>DatabaseBinding<a href="../classes/Backend.Modules.Bindings.DatabaseBinding.html">¶</a>
+</h1>
+<p class="short_description">Database Connection Binding</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.DatabaseBinding.html" class="more">« More »</a>
+</div>
+<div id="DoctrineBinding" class="element ajax clickable class">
+<h1>DoctrineBinding<a href="../classes/Backend.Modules.Bindings.DoctrineBinding.html">¶</a>
+</h1>
+<p class="short_description">Binding for Doctrine connections.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.DoctrineBinding.html" class="more">« More »</a>
+</div>
+<div id="PDOBinding" class="element ajax clickable class">
+<h1>PDOBinding<a href="../classes/Backend.Modules.Bindings.PDOBinding.html">¶</a>
+</h1>
+<p class="short_description">PDO Connection Binding</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.PDOBinding.html" class="more">« More »</a>
+</div>
+<div id="RestBinding" class="element ajax clickable class">
+<h1>RestBinding<a href="../classes/Backend.Modules.Bindings.RestBinding.html">¶</a>
+</h1>
+<p class="short_description">Rest Connection Binding to get information from REST services</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.RestBinding.html" class="more">« More »</a>
+</div>
+<div id="ServiceBinding" class="element ajax clickable class">
+<h1>ServiceBinding<a href="../classes/Backend.Modules.Bindings.ServiceBinding.html">¶</a>
+</h1>
+<p class="short_description">Service Connection Binding</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Bindings.ServiceBinding.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.html">Modules</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.EventDispatcher.html">EventDispatcher</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="EventDispatcher" class="element ajax clickable class">
+<h1>EventDispatcher<a href="../classes/Backend.Modules.EventDispatcher.EventDispatcher.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.EventDispatcher.EventDispatcher.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.html">Modules</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.File.html">File</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Image" class="element ajax clickable class">
+<h1>Image<a href="../classes/Backend.Modules.File.Image.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.File.Image.html" class="more">« More »</a>
+</div>
+<div id="Upload" class="element ajax clickable class">
+<h1>Upload<a href="../classes/Backend.Modules.File.Upload.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.File.Upload.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.html">Modules</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Backend.Modules.Storage.html">Storage</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="NativeFlash" class="element ajax clickable class">
+<h1>NativeFlash<a href="../classes/Backend.Modules.Storage.NativeFlash.html">¶</a>
+</h1>
+<p class="short_description">A simple Flash Session class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Storage.NativeFlash.html" class="more">« More »</a>
+</div>
+<div id="NativeSession" class="element ajax clickable class">
+<h1>NativeSession<a href="../classes/Backend.Modules.Storage.NativeSession.html">¶</a>
+</h1>
+<p class="short_description">A simple Session class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Storage.NativeSession.html" class="more">« More »</a>
+</div>
+<div id="Session" class="element ajax clickable class">
+<h1>Session<a href="../classes/Backend.Modules.Storage.Session.html">¶</a>
+</h1>
+<p class="short_description">A simple Session class.</p>
+<div class="details collapse"></div>
+<a href="../classes/Backend.Modules.Storage.Session.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Core\Utilities\Callback</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Object constructor"><span class="description">Object constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Convert the callback to a string."><span class="description">Convert the callback to a string.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_execute" title="execute :: Execute the callback."><span class="description">Execute the callback.</span><pre>execute()</pre></a></li>
+<li class="method public "><a href="#method_getArguments" title="getArguments :: Get the arguments of the callback."><span class="description">Get the arguments of the callback.</span><pre>getArguments()</pre></a></li>
+<li class="method public "><a href="#method_getClass" title="getClass :: Get the class name of the static method call."><span class="description">Get the class name of the static method call.</span><pre>getClass()</pre></a></li>
+<li class="method public "><a href="#method_getFunction" title="getFunction :: Get the callback function."><span class="description">Get the callback function.</span><pre>getFunction()</pre></a></li>
+<li class="method public "><a href="#method_getMethod" title="getMethod :: Get the method name of the method call."><span class="description">Get the method name of the method call.</span><pre>getMethod()</pre></a></li>
+<li class="method public "><a href="#method_getObject" title="getObject :: Get the object of the method call."><span class="description">Get the object of the method call.</span><pre>getObject()</pre></a></li>
+<li class="method public "><a href="#method_isValid" title="isValid :: Check if it is a valid callback."><span class="description">Check if it is a valid callback.</span><pre>isValid()</pre></a></li>
+<li class="method public "><a href="#method_setArguments" title="setArguments :: Set the arguments for the callback."><span class="description">Set the arguments for the callback.</span><pre>setArguments()</pre></a></li>
+<li class="method public "><a href="#method_setClass" title="setClass :: Set the class name for a static method call."><span class="description">Set the class name for a static method call.</span><pre>setClass()</pre></a></li>
+<li class="method public "><a href="#method_setFunction" title="setFunction :: Set the function as the callback."><span class="description">Set the function as the callback.</span><pre>setFunction()</pre></a></li>
+<li class="method public "><a href="#method_setMethod" title="setMethod :: Set the method name for a method call."><span class="description">Set the method name for a method call.</span><pre>setMethod()</pre></a></li>
+<li class="method public "><a href="#method_setObject" title="setObject :: Set the object for a method call."><span class="description">Set the object for a method call.</span><pre>setObject()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_arguments" title="$arguments :: The arguments to be used as parameters for the callback"><span class="description"></span><pre>$arguments</pre></a></li>
+<li class="property protected "><a href="#property_class" title="$class :: The class of the callback."><span class="description"></span><pre>$class</pre></a></li>
+<li class="property protected "><a href="#property_function" title="$function :: The function to use as a callback."><span class="description"></span><pre>$function</pre></a></li>
+<li class="property protected "><a href="#property_method" title="$method :: The name of the method to execute."><span class="description"></span><pre>$method</pre></a></li>
+<li class="property protected "><a href="#property_object" title="$object :: The object of the callback."><span class="description"></span><pre>$object</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Core\Utilities\Callback"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Utilities.html">Utilities</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Core.Utilities.Callback.html">Callback</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to handle application configs.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Core.Utilities.html">Core</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Utilities</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@jrgns.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Object constructor</h2>
+<pre>__construct(mixed $class, mixed $method, array $arguments) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class (string) , object or function of the
+callback. If it's a function, the second parameter should be omitted.</p>
+</div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>mixed</code><p>The method of the callback. If given, the first
+parameter must be either a class or an object.</p></div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code><p>The arguments for the callback.</p></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Convert the callback to a string.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is the logical inverse of {@see fromString}</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_execute"></a><div class="element clickable method public method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
+<h2>Execute the callback.</h2>
+<pre>execute(array $arguments) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The precedence is class, object, function.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code><p>The arguments with which to execute the callback.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The result of the callback.</div>
+</div></div>
+</div>
+<a id="method_getArguments"></a><div class="element clickable method public method_getArguments" data-toggle="collapse" data-target=".method_getArguments .collapse">
+<h2>Get the arguments of the callback.</h2>
+<pre>getArguments() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getClass"></a><div class="element clickable method public method_getClass" data-toggle="collapse" data-target=".method_getClass .collapse">
+<h2>Get the class name of the static method call.</h2>
+<pre>getClass() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getFunction"></a><div class="element clickable method public method_getFunction" data-toggle="collapse" data-target=".method_getFunction .collapse">
+<h2>Get the callback function.</h2>
+<pre>getFunction() : callable</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>callable</code></div>
+</div></div>
+</div>
+<a id="method_getMethod"></a><div class="element clickable method public method_getMethod" data-toggle="collapse" data-target=".method_getMethod .collapse">
+<h2>Get the method name of the method call.</h2>
+<pre>getMethod() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getObject"></a><div class="element clickable method public method_getObject" data-toggle="collapse" data-target=".method_getObject .collapse">
+<h2>Get the object of the method call.</h2>
+<pre>getObject() : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_isValid"></a><div class="element clickable method public method_isValid" data-toggle="collapse" data-target=".method_isValid .collapse">
+<h2>Check if it is a valid callback.</h2>
+<pre>isValid() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Core.Exception.html">\Backend\Core\Exception</a></code></th>
+<td>When the set callback is incomplete.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string representation of callback. Will return false
+if all the callback components aren't set.</div>
+</div></div>
+</div>
+<a id="method_setArguments"></a><div class="element clickable method public method_setArguments" data-toggle="collapse" data-target=".method_setArguments .collapse">
+<h2>Set the arguments for the callback.</h2>
+<pre>setArguments(array $arguments) : <a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code><p>The arguments for the callback.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></code>The current callback.</div>
+</div></div>
+</div>
+<a id="method_setClass"></a><div class="element clickable method public method_setClass" data-toggle="collapse" data-target=".method_setClass .collapse">
+<h2>Set the class name for a static method call.</h2>
+<pre>setClass(string $class) : <a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The name of the class of the callback.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></code>The current callback.</div>
+</div></div>
+</div>
+<a id="method_setFunction"></a><div class="element clickable method public method_setFunction" data-toggle="collapse" data-target=".method_setFunction .collapse">
+<h2>Set the function as the callback.</h2>
+<pre>setFunction(callable $function) : <a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>Allow for closures</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$function</h4>
+<code>callable</code><p>The function.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Core.Exception.html">\Backend\Core\Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></code>The current callback.</div>
+</div></div>
+</div>
+<a id="method_setMethod"></a><div class="element clickable method public method_setMethod" data-toggle="collapse" data-target=".method_setMethod .collapse">
+<h2>Set the method name for a method call.</h2>
+<pre>setMethod(string $method) : <a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method name of the callback.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></code>The current callback.</div>
+</div></div>
+</div>
+<a id="method_setObject"></a><div class="element clickable method public method_setObject" data-toggle="collapse" data-target=".method_setObject .collapse">
+<h2>Set the object for a method call.</h2>
+<pre>setObject(object $object) : <a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code>object</code><p>The object of the callback.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.CallbackInterface.html">\Backend\Interfaces\CallbackInterface</a></code>The current callback.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_arguments"> </a><div class="element clickable property protected property_arguments" data-toggle="collapse" data-target=".property_arguments .collapse">
+<h2></h2>
+<pre>$arguments </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>array</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_class"> </a><div class="element clickable property protected property_class" data-toggle="collapse" data-target=".property_class .collapse">
+<h2></h2>
+<pre>$class : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Used for static method calls.</p></div></div></div>
+</div>
+<a id="property_function"> </a><div class="element clickable property protected property_function" data-toggle="collapse" data-target=".property_function .collapse">
+<h2></h2>
+<pre>$function : callable</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_method"> </a><div class="element clickable property protected property_method" data-toggle="collapse" data-target=".property_method .collapse">
+<h2></h2>
+<pre>$method : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Used by both class and object.</p></div></div></div>
+</div>
+<a id="property_object"> </a><div class="element clickable property protected property_object" data-toggle="collapse" data-target=".property_object .collapse">
+<h2></h2>
+<pre>$object : \Backend\Core\Utilities\object.</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

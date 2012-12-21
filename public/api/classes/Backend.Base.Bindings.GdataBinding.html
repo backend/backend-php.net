@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Base\Bindings\GdataBinding</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: The constructor for the object."><span class="description">The constructor for the object.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Create an instance on the source, and return the instance."><span class="description">Create an instance on the source, and return the instance.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Delete the specified instance of the resource"><span class="description">Delete the specified instance of the resource</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_find" title="find :: Find multiple instances of the resource."><span class="description">Find multiple instances of the resource.</span><pre>find()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read :: Read and return the single, specified instance of the resource."><span class="description">Read and return the single, specified instance of the resource.</span><pre>read()</pre></a></li>
+<li class="method public "><a href="#method_refresh" title="refresh :: Refresh the specified instance on the source."><span class="description">Refresh the specified instance on the source.</span><pre>refresh()</pre></a></li>
+<li class="method public "><a href="#method_update" title="update :: Update the specified instance of the resource."><span class="description">Update the specified instance of the resource.</span><pre>update()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_mapModelToObject" title="mapModelToObject :: Map a Backend Model to a Zend_Gdata_Gapps_User Entry."><span class="description">Map a Backend Model to a Zend_Gdata_Gapps_User Entry.</span><pre>mapModelToObject()</pre></a></li>
+<li class="method protected "><a href="#method_mapObjectToModel" title="mapObjectToModel :: Map Zend_Gdata_Gapps_UserEntry objects to Backend Models"><span class="description">Map Zend_Gdata_Gapps_UserEntry objects to Backend Models</span><pre>mapObjectToModel()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_client" title="$client :: The client used to access the GApps API."><span class="description"></span><pre>$client</pre></a></li>
+<li class="property protected "><a href="#property_key" title="$key :: API Key used to access the GApps API."><span class="description"></span><pre>$key</pre></a></li>
+<li class="property protected "><a href="#property_secret" title="$secret :: API Secret to access the GApps API."><span class="description"></span><pre>$secret</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Base\Bindings\GdataBinding"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.html">Base</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Base.Bindings.html">Bindings</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Base.Bindings.GdataBinding.html">GdataBinding</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Binding for GData connections.</p>
+<div class="details">
+<div class="long_description"><p>This class relies on the Zend library, so you need to ensure that it's on the
+scripts include path. You can install Zend through PEAR:</p>
+
+<pre><code>pear channel-discover zend.googlecode.com/svn
+pear install --alldeps zend/zend
+</code></pre>
+
+<p>There's currently a known compatability issue.
+See http://framework.zend.com/issues/browse/ZF-11959 for more detail.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Modules.Bindings.html">Modules</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Bindings</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@jrgns.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>The constructor for the object.</h2>
+<pre>__construct(array $settings) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The settings array must contain the name of the entity to bind to, the name
+of the connection to use, as well as the username and password for the admin
+user that will be used to access the API. You should also provide a domain if
+it's different that that of the admin user's password.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$settings</h4>
+<code>array</code><p>The settings for the Service Connection</p></div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Create an instance on the source, and return the instance.</h2>
+<pre>create(array $data) : <a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>The data to create a new resource.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Modules.Exception.html">\Backend\Modules\Exception</a></code></th>
+<td>When the resource can't be created.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code>The created model.</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete the specified instance of the resource</h2>
+<pre>delete(\Backend\Interfaces\ModelInterface $model) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$model</h4>
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><p>&$model The model to delete</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Modules.Exception.html">\Backend\Modules\Exception</a></code></th>
+<td>When the resource can't be deleted.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the deletion was succesful or not.</div>
+</div></div>
+</div>
+<a id="method_find"></a><div class="element clickable method public method_find" data-toggle="collapse" data-target=".method_find .collapse">
+<h2>Find multiple instances of the resource.</h2>
+<pre>find(array $conditions, array $options) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Don't specify any criteria to retrieve a full list of instances.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>An array of conditions on which to filter the list.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of options.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of representations of the resource.</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Read and return the single, specified instance of the resource.</h2>
+<pre>read(mixed $identifier, boolean $returnObject) : <a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$identifier</h4>
+<code>mixed</code><p>The unique identifier for the instance, or an
+array containing criteria on which to search for the resource.</p></div>
+<div class="subelement argument">
+<h4>$returnObject</h4>
+<code>boolean</code><p>Return the UserEntry Object.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Modules.Exception.html">\Backend\Modules\Exception</a></code></th>
+<td>When the resource can't be found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code>The identified model.</div>
+</div></div>
+</div>
+<a id="method_refresh"></a><div class="element clickable method public method_refresh" data-toggle="collapse" data-target=".method_refresh .collapse">
+<h2>Refresh the specified instance on the source.</h2>
+<pre>refresh(\Backend\Interfaces\ModelInterface $model) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is the logical counterpart to update, and receives data from
+the source.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$model</h4>
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><p>&$model The model to refresh.
+Passed by reference.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Modules.Exception.html">\Backend\Modules\Exception</a></code></th>
+<td>When the resource can't be refreshed.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the refresh was successful or not.</div>
+</div></div>
+</div>
+<a id="method_update"></a><div class="element clickable method public method_update" data-toggle="collapse" data-target=".method_update .collapse">
+<h2>Update the specified instance of the resource.</h2>
+<pre>update(\Backend\Interfaces\ModelInterface $model) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is the logical counterpart to refresh, and sends data to
+the source.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$model</h4>
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><p>&$model The model to update.
+Passed by reference.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Backend.Modules.Exception.html">\Backend\Modules\Exception</a></code></th>
+<td>When the resource can't be updated.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the update was successful or not.</div>
+</div></div>
+</div>
+<a id="method_mapModelToObject"></a><div class="element clickable method protected method_mapModelToObject" data-toggle="collapse" data-target=".method_mapModelToObject .collapse">
+<h2>Map a Backend Model to a Zend_Gdata_Gapps_User Entry.</h2>
+<pre>mapModelToObject(\Backend\Interfaces\ModelInterface $model, \Zend_Gdata_Gapps_UserEntry $user) : \Backend\Base\Bindings\Zend_Gdata_Gapps_UserEntry</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The model should provide the following functions for this function to
+work correctly:</p>
+
+<ul>
+<li>getUsername()</li>
+<li>getPassword()</li>
+<li>getGivenName()</li>
+<li>getFamilyName()</li>
+</ul></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$model</h4>
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code><p>The model to map.</p></div>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>\Zend_Gdata_Gapps_UserEntry</code><p>The UserEntry object to
+populate.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Backend\Base\Bindings\Zend_Gdata_Gapps_UserEntry</code>The object</div>
+</div></div>
+</div>
+<a id="method_mapObjectToModel"></a><div class="element clickable method protected method_mapObjectToModel" data-toggle="collapse" data-target=".method_mapObjectToModel .collapse">
+<h2>Map Zend_Gdata_Gapps_UserEntry objects to Backend Models</h2>
+<pre>mapObjectToModel(\Zend_Gdata_Gapps_UserEntry $object) : <a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code>\Backend\Base\Bindings\Zend_Gdata_Gapps_UserEntry</code><p>The object to map.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ModelInterface.html">\Backend\Interfaces\ModelInterface</a></code>The model.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_client"> </a><div class="element clickable property protected property_client" data-toggle="collapse" data-target=".property_client .collapse">
+<h2></h2>
+<pre>$client </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>Zend_Gdata_Gapps</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_key"> </a><div class="element clickable property protected property_key" data-toggle="collapse" data-target=".property_key .collapse">
+<h2></h2>
+<pre>$key : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Unused for now.</p></div></div></div>
+</div>
+<a id="property_secret"> </a><div class="element clickable property protected property_secret" data-toggle="collapse" data-target=".property_secret .collapse">
+<h2></h2>
+<pre>$secret : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Unused for now.</p></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:31+02:00.<br></footer></div>
+</div>
+</body>
+</html>

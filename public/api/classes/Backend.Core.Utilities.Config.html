@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Backend-PHP » \Backend\Core\Utilities\Config</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Backend-PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Backend.html"><i class="icon-th"></i> Backend</a></li>
+<li><a href="../namespaces/Tests.html"><i class="icon-th"></i> Tests</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Base.html"><i class="icon-folder-open"></i> Base</a></li>
+<li><a href="../packages/Base.Utilities.html"><i class="icon-folder-open"></i> Base/Utilities</a></li>
+<li><a href="../packages/BaseTests.html"><i class="icon-folder-open"></i> BaseTests</a></li>
+<li><a href="../packages/Core.html"><i class="icon-folder-open"></i> Core</a></li>
+<li><a href="../packages/CoreTests.html"><i class="icon-folder-open"></i> CoreTests</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Interfaces.html"><i class="icon-folder-open"></i> Interfaces</a></li>
+<li><a href="../packages/InterfacesTests.html"><i class="icon-folder-open"></i> InterfacesTests</a></li>
+<li><a href="../packages/Modules.html"><i class="icon-folder-open"></i> Modules</a></li>
+<li><a href="../packages/Utilities.html"><i class="icon-folder-open"></i> Utilities</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">167</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">27</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Construct the config class."><span class="description">Construct the config class.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get :: Magic function that returns the config values on request"><span class="description">Magic function that returns the config values on request</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method___set" title="__set :: Magic function that set the config values on request"><span class="description">Magic function that set the config values on request</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#method_current" title="current :: Iterator function to get the current element."><span class="description">Iterator function to get the current element.</span><pre>current()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Get the named config value."><span class="description">Get the named config value.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getBaseFolders" title="getBaseFolders :: Get the Base folders"><span class="description">Get the Base folders</span><pre>getBaseFolders()</pre></a></li>
+<li class="method public "><a href="#method_getNamed" title="getNamed :: Get the named configuration file from the default config locations."><span class="description">Get the named configuration file from the default config locations.</span><pre>getNamed()</pre></a></li>
+<li class="method public "><a href="#method_getParser" title="getParser :: Get the parser to parse a config file."><span class="description">Get the parser to parse a config file.</span><pre>getParser()</pre></a></li>
+<li class="method public "><a href="#method_has" title="has :: Check if the config has the specified value."><span class="description">Check if the config has the specified value.</span><pre>has()</pre></a></li>
+<li class="method public "><a href="#method_key" title="key :: Iterator function to get the current key."><span class="description">Iterator function to get the current key.</span><pre>key()</pre></a></li>
+<li class="method public "><a href="#method_next" title="next :: Iterator function to proceed to the next value."><span class="description">Iterator function to proceed to the next value.</span><pre>next()</pre></a></li>
+<li class="method public "><a href="#method_rewind" title="rewind :: Iterator function to reset the collection."><span class="description">Iterator function to reset the collection.</span><pre>rewind()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Set a named config value."><span class="description">Set a named config value.</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_setAll" title="setAll :: Set the configuration values."><span class="description">Set the configuration values.</span><pre>setAll()</pre></a></li>
+<li class="method public "><a href="#method_setBaseFolders" title="setBaseFolders :: Set the Base folders."><span class="description">Set the Base folders.</span><pre>setBaseFolders()</pre></a></li>
+<li class="method public "><a href="#method_setParser" title="setParser :: Set the parser to use when parsing a config file."><span class="description">Set the parser to use when parsing a config file.</span><pre>setParser()</pre></a></li>
+<li class="method public "><a href="#method_valid" title="valid :: Iterator function to check if there are more element in the collection."><span class="description">Iterator function to check if there are more element in the collection.</span><pre>valid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_fromFile" title="fromFile :: Instansiate the configuration from the specified file."><span class="description">Instansiate the configuration from the specified file.</span><pre>fromFile()</pre></a></li>
+<li class="method protected "><a href="#method_import" title="import :: Import a defined config into the current config file."><span class="description">Import a defined config into the current config file.</span><pre>import()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_baseFolders" title="$baseFolders :: The folders in which to check for configs."><span class="description"></span><pre>$baseFolders</pre></a></li>
+<li class="property protected "><a href="#property_parser" title="$parser :: Parser to parse the config file."><span class="description"></span><pre>$parser</pre></a></li>
+<li class="property protected "><a href="#property_values" title="$values :: "><span class="description">Store for all the config values.</span><pre>$values</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Backend\Core\Utilities\Config"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Backend.html">Backend</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.html">Core</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Backend.Core.Utilities.html">Utilities</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Backend.Core.Utilities.Config.html">Config</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Class to handle application configs.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Backend</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Core.Utilities.html">Core</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Utilities</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jrgns@jrgns.net">J Jurgens du Toit</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://backend-php.net">http://backend-php.net</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Construct the config class.</h2>
+<pre>__construct(object $parser, mixed $config) : null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code>object</code><p>The parser to use when parsing a file.</p></div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>mixed</code><p>The configuration, either as an array of values
+or the name of the config file.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>null</code></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>Magic function that returns the config values on request</h2>
+<pre>__get(string $propertyName) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$propertyName</h4>
+<code>string</code><p>The name of the property being accessed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the property</div>
+</div></div>
+</div>
+<a id="method___set"></a><div class="element clickable method public method___set" data-toggle="collapse" data-target=".method___set .collapse">
+<h2>Magic function that set the config values on request</h2>
+<pre>__set(string $propertyName, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$propertyName</h4>
+<code>string</code><p>The name of the property being set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property</p></div>
+</div></div>
+</div>
+<a id="method_current"></a><div class="element clickable method public method_current" data-toggle="collapse" data-target=".method_current .collapse">
+<h2>Iterator function to get the current element.</h2>
+<pre>current() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Get the named config value.</h2>
+<pre>get(string $name, mixed $default) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the config value. Omit to get the whole
+config.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value to return should the value not
+be found.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The config setting</div>
+</div></div>
+</div>
+<a id="method_getBaseFolders"></a><div class="element clickable method public method_getBaseFolders" data-toggle="collapse" data-target=".method_getBaseFolders .collapse">
+<h2>Get the Base folders</h2>
+<pre>getBaseFolders() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getNamed"></a><div class="element clickable method public method_getNamed" data-toggle="collapse" data-target=".method_getNamed .collapse">
+<h2>Get the named configuration file from the default config locations.</h2>
+<pre>getNamed(object $parser, string $name) : \Backend\Core\Utilities\Backend\Interfaces\ConfigInterface</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The environment specific file is tried first, otherwise the global one is used.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code>object</code><p>The parser to use when parsing a file.</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the configuration to get.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Backend\Core\Utilities\Backend\Core\Exceptions\ConfigException</code></th>
+<td>If the config file can't be
+found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Backend\Core\Utilities\Backend\Interfaces\ConfigInterface</code></div>
+</div></div>
+</div>
+<a id="method_getParser"></a><div class="element clickable method public method_getParser" data-toggle="collapse" data-target=".method_getParser .collapse">
+<h2>Get the parser to parse a config file.</h2>
+<pre>getParser() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>@return object</p></div></div></div>
+</div>
+<a id="method_has"></a><div class="element clickable method public method_has" data-toggle="collapse" data-target=".method_has .collapse">
+<h2>Check if the config has the specified value.</h2>
+<pre>has(mixed $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>mixed</code><p>The name of the config value to check.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the config has the specified value.</div>
+</div></div>
+</div>
+<a id="method_key"></a><div class="element clickable method public method_key" data-toggle="collapse" data-target=".method_key .collapse">
+<h2>Iterator function to get the current key.</h2>
+<pre>key() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_next"></a><div class="element clickable method public method_next" data-toggle="collapse" data-target=".method_next .collapse">
+<h2>Iterator function to proceed to the next value.</h2>
+<pre>next() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_rewind"></a><div class="element clickable method public method_rewind" data-toggle="collapse" data-target=".method_rewind .collapse">
+<h2>Iterator function to reset the collection.</h2>
+<pre>rewind() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Set a named config value.</h2>
+<pre>set(string $name, mixed $value) : <a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the config value.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the setting.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></code>The current config.</div>
+</div></div>
+</div>
+<a id="method_setAll"></a><div class="element clickable method public method_setAll" data-toggle="collapse" data-target=".method_setAll .collapse">
+<h2>Set the configuration values.</h2>
+<pre>setAll(mixed $config) : <a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>mixed</code><p>The configuration, either as an array of values
+or the name of the config file.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Backend.Interfaces.ConfigInterface.html">\Backend\Interfaces\ConfigInterface</a></code>The current config.</div>
+</div></div>
+</div>
+<a id="method_setBaseFolders"></a><div class="element clickable method public method_setBaseFolders" data-toggle="collapse" data-target=".method_setBaseFolders .collapse">
+<h2>Set the Base folders.</h2>
+<pre>setBaseFolders(array $folders) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folders</h4>
+<code>array</code><p>The base folders</p></div>
+</div></div>
+</div>
+<a id="method_setParser"></a><div class="element clickable method public method_setParser" data-toggle="collapse" data-target=".method_setParser .collapse">
+<h2>Set the parser to use when parsing a config file.</h2>
+<pre>setParser(object $parser) : <a href="../classes/Backend.Core.Utilities.Config.html">\Backend\Core\Utilities\Config</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code>object</code><p>The parser.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Core.Utilities.Config.html">\Backend\Core\Utilities\Config</a></code></div>
+</div></div>
+</div>
+<a id="method_valid"></a><div class="element clickable method public method_valid" data-toggle="collapse" data-target=".method_valid .collapse">
+<h2>Iterator function to check if there are more element in the collection.</h2>
+<pre>valid() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_fromFile"></a><div class="element clickable method protected method_fromFile" data-toggle="collapse" data-target=".method_fromFile .collapse">
+<h2>Instansiate the configuration from the specified file.</h2>
+<pre>fromFile(string $filename) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The name of the file to parse.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_import"></a><div class="element clickable method protected method_import" data-toggle="collapse" data-target=".method_import .collapse">
+<h2>Import a defined config into the current config file.</h2>
+<pre>import(array $reference) : <a href="../classes/Backend.Core.Utilities.Config.html">\Backend\Core\Utilities\Config</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The import references are defined as follows:
+imports:
+    - { [type]: [value] }</p>
+
+<p>Where type can be either</p>
+
+<pre><code>file</code></pre>
+
+<p>or</p>
+
+<pre><code>resource</code></pre>
+
+<p>. The</p>
+
+<pre><code>resource</code></pre>
+
+<p>type follows the same semantics as that of the getNamed
+method and takes precedent over the file directive.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$reference</h4>
+<code>array</code><p>The import reference.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Backend.Core.Utilities.Config.html">\Backend\Core\Utilities\Config</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_baseFolders"> </a><div class="element clickable property protected property_baseFolders" data-toggle="collapse" data-target=".property_baseFolders .collapse">
+<h2></h2>
+<pre>$baseFolders : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_parser"> </a><div class="element clickable property protected property_parser" data-toggle="collapse" data-target=".property_parser .collapse">
+<h2></h2>
+<pre>$parser : callable</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_values"> </a><div class="element clickable property protected property_values" data-toggle="collapse" data-target=".property_values .collapse">
+<h2>Store for all the config values.</h2>
+<pre>$values : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2012-12-21T11:37:30+02:00.<br></footer></div>
+</div>
+</body>
+</html>

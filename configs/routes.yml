@@ -1,0 +1,12 @@
+# Define all custom routes here
+routes:
+    home:
+        route: /
+        callback: \Backend\App\Controllers\ContentsController::show
+
+    content:
+        route: /<name>
+        callback: \Backend\App\Controllers\ContentsController::show
+
+# Map the area part of the url to a controller
+controllers:

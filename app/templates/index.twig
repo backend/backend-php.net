@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+{% block title %}Backend{% if title is not empty %} - {{  title }}{% endif %}{% endblock %}
+
+{% block header %}
+    {% if title is not empty %}
+        <div class="container">
+            <div class="page-header">
+                <h1>{{ title }}</h1>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+    </div>
+{% endblock %}
